@@ -13,7 +13,7 @@
         <div class="contact-address">
           <i class="ion-ios-location-outline"></i>
           <h3>Address</h3>
-          <address>{{ $settings['contact_address'] }}</address>
+          <address>{{ $settings['contact_address'] ?? '' }}</address>
         </div>
       </div>
 

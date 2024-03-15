@@ -17,10 +17,10 @@
             <li><i class="fa fa-angle-right"></i> <a href="#">Terms of service</a></li>
             <li><i class="fa fa-angle-right"></i> <a href="#">Privacy policy</a></li>
             @guest
-              <li><i class="fa fa-angle-right"></i> <a href="{{ route('login') }}">Login</a></li>
+            <li><i class="fa fa-angle-right"></i> <a href="{{ route('login') }}">Login</a></li>
             @endguest
             @auth
-              <li><i class="fa fa-angle-right"></i> <a href="{{ route('admin.home') }}">Admin Panel</a></li>
+            <li><i class="fa fa-angle-right"></i> <a href="{{ route('admin.home') }}">Admin Panel</a></li>
             @endauth
           </ul>
         </div>
@@ -34,10 +34,10 @@
             <li><i class="fa fa-angle-right"></i> <a href="#">Terms of service</a></li>
             <li><i class="fa fa-angle-right"></i> <a href="#">Privacy policy</a></li>
             @guest
-              <li><i class="fa fa-angle-right"></i> <a href="{{ route('login') }}">Login</a></li>
+            <li><i class="fa fa-angle-right"></i> <a href="{{ route('login') }}">Login</a></li>
             @endguest
             @auth
-              <li><i class="fa fa-angle-right"></i> <a href="{{ route('admin.home') }}">Admin Panel</a></li>
+            <li><i class="fa fa-angle-right"></i> <a href="{{ route('admin.home') }}">Admin Panel</a></li>
             @endauth
           </ul>
         </div>
@@ -46,8 +46,8 @@
           <h4>Contact Us</h4>
           <p>
             {!! $settings['footer_address'] ?? '' !!}<br>
-            <strong>Phone:</strong> {{ $settings['contact_phone'] }}<br>
-            <strong>Email:</strong> {{ $settings['contact_email'] }}<br>
+            <strong>Phone:</strong> {{ $settings['contact_phone'] ?? '' }}<br>
+            <strong>Email:</strong> {{ $settings['contact_email'] ?? '' }}<br>
           </p>
 
           <div class="social-links">
