@@ -22,229 +22,210 @@
                     </a>
                 </li>
                 @can('user_management_access')
-                    <li class="nav-item has-treeview {{ request()->is('admin/permissions*') ? 'menu-open' : '' }} {{ request()->is('admin/roles*') ? 'menu-open' : '' }} {{ request()->is('admin/users*') ? 'menu-open' : '' }}">
-                        <a class="nav-link nav-dropdown-toggle" href="#">
-                            <i class="fa-fw fas fa-users">
+                <li class="nav-item has-treeview {{ request()->is('admin/permissions*') ? 'menu-open' : '' }} {{ request()->is('admin/roles*') ? 'menu-open' : '' }} {{ request()->is('admin/users*') ? 'menu-open' : '' }}">
+                    <a class="nav-link nav-dropdown-toggle" href="#">
+                        <i class="fa-fw fas fa-users">
 
-                            </i>
-                            <p>
-                                <span>{{ trans('cruds.userManagement.title') }}</span>
-                                <i class="right fa fa-fw fa-angle-left"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            @can('permission_access')
-                                <li class="nav-item">
-                                    <a href="{{ route("admin.permissions.index") }}"
-                                       class="nav-link {{ request()->is('admin/permissions') || request()->is('admin/permissions/*') ? 'active' : '' }}">
-                                        <i class="fa-fw fas fa-unlock-alt">
+                        </i>
+                        <p>
+                            <span>{{ trans('cruds.userManagement.title') }}</span>
+                            <i class="right fa fa-fw fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        @can('permission_access')
+                        <li class="nav-item">
+                            <a href="{{ route("admin.permissions.index") }}" class="nav-link {{ request()->is('admin/permissions') || request()->is('admin/permissions/*') ? 'active' : '' }}">
+                                <i class="fa-fw fas fa-unlock-alt">
 
-                                        </i>
-                                        <p>
-                                            <span>{{ trans('cruds.permission.title') }}</span>
-                                        </p>
-                                    </a>
-                                </li>
-                            @endcan
-                            @can('role_access')
-                                <li class="nav-item">
-                                    <a href="{{ route("admin.roles.index") }}"
-                                       class="nav-link {{ request()->is('admin/roles') || request()->is('admin/roles/*') ? 'active' : '' }}">
-                                        <i class="fa-fw fas fa-briefcase">
+                                </i>
+                                <p>
+                                    <span>{{ trans('cruds.permission.title') }}</span>
+                                </p>
+                            </a>
+                        </li>
+                        @endcan
+                        @can('role_access')
+                        <li class="nav-item">
+                            <a href="{{ route("admin.roles.index") }}" class="nav-link {{ request()->is('admin/roles') || request()->is('admin/roles/*') ? 'active' : '' }}">
+                                <i class="fa-fw fas fa-briefcase">
 
-                                        </i>
-                                        <p>
-                                            <span>{{ trans('cruds.role.title') }}</span>
-                                        </p>
-                                    </a>
-                                </li>
-                            @endcan
-                            @can('user_access')
-                                <li class="nav-item">
-                                    <a href="{{ route("admin.users.index") }}"
-                                       class="nav-link {{ request()->is('admin/users') || request()->is('admin/users/*') ? 'active' : '' }}">
-                                        <i class="fa-fw fas fa-user">
+                                </i>
+                                <p>
+                                    <span>{{ trans('cruds.role.title') }}</span>
+                                </p>
+                            </a>
+                        </li>
+                        @endcan
+                        @can('user_access')
+                        <li class="nav-item">
+                            <a href="{{ route("admin.users.index") }}" class="nav-link {{ request()->is('admin/users') || request()->is('admin/users/*') ? 'active' : '' }}">
+                                <i class="fa-fw fas fa-user">
 
-                                        </i>
-                                        <p>
-                                            <span>{{ trans('cruds.user.title') }}</span>
-                                        </p>
-                                    </a>
-                                </li>
-                            @endcan
-                        </ul>
-                    </li>
+                                </i>
+                                <p>
+                                    <span>{{ trans('cruds.user.title') }}</span>
+                                </p>
+                            </a>
+                        </li>
+                        @endcan
+                    </ul>
+                </li>
                 @endcan
                 @can('setting_access')
-                    <li class="nav-item">
-                        <a href="{{ route("admin.settings.index") }}"
-                           class="nav-link {{ request()->is('admin/settings') || request()->is('admin/settings/*') ? 'active' : '' }}">
-                            <i class="fa-fw fas fa-cogs">
+                <li class="nav-item">
+                    <a href="{{ route("admin.settings.index") }}" class="nav-link {{ request()->is('admin/settings') || request()->is('admin/settings/*') ? 'active' : '' }}">
+                        <i class="fa-fw fas fa-cogs">
 
-                            </i>
-                            <p>
-                                <span>{{ trans('cruds.setting.title') }}</span>
-                            </p>
-                        </a>
-                    </li>
+                        </i>
+                        <p>
+                            <span>{{ trans('cruds.setting.title') }}</span>
+                        </p>
+                    </a>
+                </li>
                 @endcan
                 @can('speaker_access')
-                    <li class="nav-item">
-                        <a href="{{ route("admin.speakers.index") }}"
-                           class="nav-link {{ request()->is('admin/speakers') || request()->is('admin/speakers/*') ? 'active' : '' }}">
-                            <i class="fa-fw fas fa-users">
+                <li class="nav-item">
+                    <a href="{{ route("admin.speakers.index") }}" class="nav-link {{ request()->is('admin/speakers') || request()->is('admin/speakers/*') ? 'active' : '' }}">
+                        <i class="fa-fw fas fa-users">
 
-                            </i>
-                            <p>
-                                <span>{{ trans('cruds.speaker.title') }}</span>
-                            </p>
-                        </a>
-                    </li>
+                        </i>
+                        <p>
+                            <span>{{ trans('cruds.speaker.title') }}</span>
+                        </p>
+                    </a>
+                </li>
                 @endcan
                 @can('schedule_access')
-                    <li class="nav-item">
-                        <a href="{{ route("admin.schedules.index") }}"
-                           class="nav-link {{ request()->is('admin/schedules') || request()->is('admin/schedules/*') ? 'active' : '' }}">
-                            <i class="fa-fw far fa-clock">
+                <li class="nav-item">
+                    <a href="{{ route("admin.schedules.index") }}" class="nav-link {{ request()->is('admin/schedules') || request()->is('admin/schedules/*') ? 'active' : '' }}">
+                        <i class="fa-fw far fa-clock">
 
-                            </i>
-                            <p>
-                                <span>{{ trans('cruds.schedule.title') }}</span>
-                            </p>
-                        </a>
-                    </li>
+                        </i>
+                        <p>
+                            <span>{{ trans('cruds.schedule.title') }}</span>
+                        </p>
+                    </a>
+                </li>
                 @endcan
                 @can('venue_access')
-                    <li class="nav-item">
-                        <a href="{{ route("admin.venues.index") }}"
-                           class="nav-link {{ request()->is('admin/venues') || request()->is('admin/venues/*') ? 'active' : '' }}">
-                            <i class="fa-fw fas fa-map-marker-alt">
+                <li class="nav-item">
+                    <a href="{{ route("admin.venues.index") }}" class="nav-link {{ request()->is('admin/venues') || request()->is('admin/venues/*') ? 'active' : '' }}">
+                        <i class="fa-fw fas fa-map-marker-alt">
 
-                            </i>
-                            <p>
-                                <span>{{ trans('cruds.venue.title') }}</span>
-                            </p>
-                        </a>
-                    </li>
+                        </i>
+                        <p>
+                            <span>{{ trans('cruds.venue.title') }}</span>
+                        </p>
+                    </a>
+                </li>
                 @endcan
                 {{--@can('hotel_access')--}}
                 <li class="nav-item">
-                    <a href="{{ route("admin.hotels.index") }}"
-                       class="nav-link {{ request()->is('admin/hotels') || request()->is('admin/hotels/*') ? 'active' : '' }}">
+                    <a href="{{ route("admin.hotels.index") }}" class="nav-link {{ request()->is('admin/hotels') || request()->is('admin/hotels/*') ? 'active' : '' }}">
                         <i class="fa-fw fas fa-hotel"></i>
                         <p>
-                            <span>{{ trans('Hotels') }}</span>
+                            <span>{{ trans('cruds.hotel.title') }}</span>
                         </p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route("admin.committees.index") }}"
-                       class="nav-link {{ request()->is('admin/committees') || request()->is('admin/committees/*') ? 'active' : '' }}">
+                    <a href="{{ route("admin.committees.index") }}" class="nav-link {{ request()->is('admin/committees') || request()->is('admin/committees/*') ? 'active' : '' }}">
                         <i class="fa-fw fas fa-address-card"></i>
                         <p>
-                            <span>{{ trans('Committees') }}</span>
+                            <span>{{ trans('cruds.committee.title') }}</span>
                         </p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route("admin.workshops.index") }}"
-                       class="nav-link {{ request()->is('admin/workshops') || request()->is('admin/workshops/*') ? 'active' : '' }}">
+                    <a href="{{ route("admin.workshops.index") }}" class="nav-link {{ request()->is('admin/workshops') || request()->is('admin/workshops/*') ? 'active' : '' }}">
                         <i class="fa-fw fas fa-calendar"></i>
                         <p>
-                            <span>{{ trans('Programs') }}</span>
+                            <span>{{ trans('cruds.workshop.title') }}</span>
                         </p>
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a href="{{ route("admin.authors.index") }}"
-                       class="nav-link {{ request()->is('admin/authors') || request()->is('admin/authors/*') ? 'active' : '' }}">
+                    <a href="{{ route("admin.authors.index") }}" class="nav-link {{ request()->is('admin/authors') || request()->is('admin/authors/*') ? 'active' : '' }}">
                         <i class="fa-fw fas fa-scroll"></i>
                         <p>
-                            {{--<span>{{ trans('cruds.author.title') }}</span>--}}
-                            <span>(for) Authors</span>
+                            <span>{{ trans('cruds.author.title') }}</span>
                         </p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route("admin.news.index") }}"
-                       class="nav-link {{ request()->is('admin/news') || request()->is('admin/news/*') ? 'active' : '' }}">
+                    <a href="{{ route("admin.news.index") }}" class="nav-link {{ request()->is('admin/news') || request()->is('admin/news/*') ? 'active' : '' }}">
                         <i class="fa-fw fas fa-newspaper"></i>
                         <p>
-                            {{--                                <span>{{ trans('cruds.news.title') }}</span>--}}
+                            {{-- <span>{{ trans('cruds.news.title') }}</span>--}}
                             <span>news</span>
                         </p>
                     </a>
                 </li>
                 {{--@endcan--}}
                 @can('gallery_access')
-                    <li class="nav-item">
-                        <a href="{{ route("admin.galleries.index") }}"
-                           class="nav-link {{ request()->is('admin/galleries') || request()->is('admin/galleries/*') ? 'active' : '' }}">
-                            <i class="fa-fw fas fa-images">
+                <li class="nav-item">
+                    <a href="{{ route("admin.galleries.index") }}" class="nav-link {{ request()->is('admin/galleries') || request()->is('admin/galleries/*') ? 'active' : '' }}">
+                        <i class="fa-fw fas fa-images">
 
-                            </i>
-                            <p>
-                                <span>{{ trans('cruds.gallery.title') }}</span>
-                            </p>
-                        </a>
-                    </li>
+                        </i>
+                        <p>
+                            <span>{{ trans('cruds.gallery.title') }}</span>
+                        </p>
+                    </a>
+                </li>
                 @endcan
                 @can('sponsor_access')
-                    <li class="nav-item">
-                        <a href="{{ route("admin.sponsors.index") }}"
-                           class="nav-link {{ request()->is('admin/sponsors') || request()->is('admin/sponsors/*') ? 'active' : '' }}">
-                            <i class="fa-fw fas fa-hand-holding-usd">
+                <li class="nav-item">
+                    <a href="{{ route("admin.sponsors.index") }}" class="nav-link {{ request()->is('admin/sponsors') || request()->is('admin/sponsors/*') ? 'active' : '' }}">
+                        <i class="fa-fw fas fa-hand-holding-usd">
 
-                            </i>
-                            <p>
-                                <span>{{ trans('cruds.sponsor.title') }}</span>
-                            </p>
-                        </a>
-                    </li>
+                        </i>
+                        <p>
+                            <span>{{ trans('cruds.sponsor.title') }}</span>
+                        </p>
+                    </a>
+                </li>
                 @endcan
                 @can('faq_access')
-                    <li class="nav-item">
-                        <a href="{{ route("admin.faqs.index") }}"
-                           class="nav-link {{ request()->is('admin/faqs') || request()->is('admin/faqs/*') ? 'active' : '' }}">
-                            <i class="fa-fw fas fa-question">
+                <li class="nav-item">
+                    <a href="{{ route("admin.faqs.index") }}" class="nav-link {{ request()->is('admin/faqs') || request()->is('admin/faqs/*') ? 'active' : '' }}">
+                        <i class="fa-fw fas fa-question">
 
-                            </i>
-                            <p>
-                                <span>{{ trans('cruds.faq.title') }}</span>
-                            </p>
-                        </a>
-                    </li>
+                        </i>
+                        <p>
+                            <span>{{ trans('cruds.faq.title') }}</span>
+                        </p>
+                    </a>
+                </li>
                 @endcan
                 @can('amenity_access')
-                    <li class="nav-item">
-                        <a href="{{ route("admin.amenities.index") }}"
-                           class="nav-link {{ request()->is('admin/amenities') || request()->is('admin/amenities/*') ? 'active' : '' }}">
-                            <i class="fa-fw fas fa-check">
+                <li class="nav-item">
+                    <a href="{{ route("admin.amenities.index") }}" class="nav-link {{ request()->is('admin/amenities') || request()->is('admin/amenities/*') ? 'active' : '' }}">
+                        <i class="fa-fw fas fa-check">
 
-                            </i>
-                            <p>
-                                <span>{{ trans('cruds.amenity.title') }}</span>
-                            </p>
-                        </a>
-                    </li>
+                        </i>
+                        <p>
+                            <span>{{ trans('cruds.amenity.title') }}</span>
+                        </p>
+                    </a>
+                </li>
                 @endcan
                 @can('price_access')
-                    <li class="nav-item">
-                        <a href="{{ route("admin.prices.index") }}"
-                           class="nav-link {{ request()->is('admin/prices') || request()->is('admin/prices/*') ? 'active' : '' }}">
-                            <i class="fa-fw fas fa-money-bill">
+                <li class="nav-item">
+                    <a href="{{ route("admin.prices.index") }}" class="nav-link {{ request()->is('admin/prices') || request()->is('admin/prices/*') ? 'active' : '' }}">
+                        <i class="fa-fw fas fa-money-bill">
 
-                            </i>
-                            <p>
-                                <span>{{ trans('cruds.price.title') }}</span>
-                            </p>
-                        </a>
-                    </li>
+                        </i>
+                        <p>
+                            <span>{{ trans('cruds.price.title') }}</span>
+                        </p>
+                    </a>
+                </li>
                 @endcan
                 <li class="nav-item">
-                    <a href="#" class="nav-link"
-                       onclick="event.preventDefault(); document.getElementById('logoutform').submit();">
+                    <a href="#" class="nav-link" onclick="event.preventDefault(); document.getElementById('logoutform').submit();">
                         <p>
                             <i class="fas fa-fw fa-sign-out-alt">
 
