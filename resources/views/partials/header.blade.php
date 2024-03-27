@@ -66,7 +66,7 @@
                 </li>
                 <li class="language-switch">
                     <a href="" hreflang="LOCALE PREFIX">
-                        <i class="fa fa-flag" style="color: white;" aria-hidden="true"></i>
+                        <i class="fa fa-globe" style="color: white;" aria-hidden="true"></i>
                         <span>
                             فارسی
                         </span>
