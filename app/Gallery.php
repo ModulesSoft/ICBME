@@ -34,6 +34,7 @@ class Gallery extends Model implements HasMedia
     public function registerMediaConversions(Media $media = null): void
     {
         $this->addMediaConversion('thumb')->width(50)->height(50);
+        $this->addMediaConversion('medthumb')->width(150)->height(150);
     }
 
     public function getPhotosAttribute()
@@ -42,6 +43,7 @@ class Gallery extends Model implements HasMedia
         $files->each(function ($item) {
             $item->url       = $item->getUrl();
             $item->thumbnail = $item->getUrl('thumb');
+            $item->medthumbnail = $item->getUrl('medthumb');
         });
 
         return $files;

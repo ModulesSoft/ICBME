@@ -39,6 +39,7 @@ class Speaker extends Model implements HasMedia
     public function registerMediaConversions(Media $media = null): void
     {
         $this->addMediaConversion('thumb')->width(50)->height(50);
+        $this->addMediaConversion('bigthumb')->width(300)->height(300);
     }
 
     public function schedules()
@@ -53,6 +54,7 @@ class Speaker extends Model implements HasMedia
         if ($file) {
             $file->url       = $file->getUrl();
             $file->thumbnail = $file->getUrl('thumb');
+            $file->bigthumbnail = $file->getUrl('bigthumb');
         }
 
         return $file;
