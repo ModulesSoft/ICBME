@@ -1,9 +1,18 @@
 <?php
 
-Route::get('/', 'HomeController@index')->name('home');
-Route::get('speaker/{speaker}', 'HomeController@view')->name('speaker');
-Route::redirect('/home', '/admin');
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+
 Auth::routes(['register' => false]);
+Route::get('/', 'HomeController@index')->name('home');
+Route::resource('speakers', 'SpeakersController')->only('show')->name('show', 'speaker');
+Route::resource('news', 'NewsController')->only(['index', 'show'])->name('index', 'news')->name('show', 'new');
+Route::resource('committees', 'CommitteesController')->only('index')->name('index', 'committees');
+Route::resource('sponsors', 'SponsorsController')->only('index')->name('index', 'sponsors');
+Route::resource('authors', 'AuthorsController')->only(['index', 'show'])->name('index', 'authors')->name('show', 'author');
+Route::resource('galleries', 'GalleriesController')->only('index')->name('index', 'galleries');
+Route::resource('workshops', 'WorkshopsController')->only('index')->name('index', 'workshops');
+Route::get('poster', 'PostersController@show')->name('poster');
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => ['auth']], function () {
     Route::get('/', 'HomeController@index')->name('home');
@@ -37,10 +46,30 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::post('venues/media', 'VenuesController@storeMedia')->name('venues.storeMedia');
     Route::resource('venues', 'VenuesController');
 
+    // Committees
+    Route::delete('committees/destroy', 'CommitteesController@massDestroy')->name('committees.massDestroy');
+    Route::post('committees/media', 'CommitteesController@storeMedia')->name('committees.storeMedia');
+    Route::resource('committees', 'CommitteesController');
+
     // Hotels
     Route::delete('hotels/destroy', 'HotelsController@massDestroy')->name('hotels.massDestroy');
     Route::post('hotels/media', 'HotelsController@storeMedia')->name('hotels.storeMedia');
     Route::resource('hotels', 'HotelsController');
+
+    // Workshops
+    Route::delete('workshops/destroy', 'WorkshopsController@massDestroy')->name('workshops.massDestroy');
+    Route::post('workshops/media', 'WorkshopsController@storeMedia')->name('workshops.storeMedia');
+    Route::resource('workshops', 'WorkshopsController');
+
+    // Authors
+    Route::delete('authors/destroy', 'AuthorsController@massDestroy')->name('authors.massDestroy');
+    Route::post('authors/media', 'AuthorsController@storeMedia')->name('authors.storeMedia');
+    Route::resource('authors', 'AuthorsController');
+
+    // news
+    Route::delete('news/destroy', 'NewsController@massDestroy')->name('news.massDestroy');
+    Route::post('news/media', 'NewsController@storeMedia')->name('news.storeMedia');
+    Route::resource('news', 'NewsController');
 
     // Galleries
     Route::delete('galleries/destroy', 'GalleriesController@massDestroy')->name('galleries.massDestroy');
