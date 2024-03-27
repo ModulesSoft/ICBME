@@ -13,11 +13,12 @@ use App\Price;
 use App\Amenity;
 use App\Statistics;
 use Carbon\Carbon;
+use Illuminate\Contracts\View\View;
 
 class HomeController extends Controller
 {
 
-    public function index()
+    public function index(): View
     {
         $hit = new Statistics;
         $hit->page = 'home';
