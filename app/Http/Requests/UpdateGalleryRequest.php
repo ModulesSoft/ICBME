@@ -22,6 +22,9 @@ class UpdateGalleryRequest extends FormRequest
             'name' => [
                 'required',
             ],
+            'photos' => [
+                'required',
+            ],
         ];
     }
 }

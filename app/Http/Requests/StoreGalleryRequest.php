@@ -22,6 +22,9 @@ class StoreGalleryRequest extends FormRequest
             'name' => [
                 'required',
             ],
+            'photos' => [
+                'required',
+            ],
         ];
     }
 }
