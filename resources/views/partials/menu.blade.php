@@ -120,7 +120,7 @@
                     </a>
                 </li>
                 @endcan
-                {{--@can('hotel_access')--}}
+                @can('hotel_access')
                 <li class="nav-item">
                     <a href="{{ route("admin.hotels.index") }}" class="nav-link {{ request()->is('admin/hotels') || request()->is('admin/hotels/*') ? 'active' : '' }}">
                         <i class="fa-fw fas fa-hotel"></i>
@@ -129,6 +129,8 @@
                         </p>
                     </a>
                 </li>
+                @endcan
+                @can('committee_access')
                 <li class="nav-item">
                     <a href="{{ route("admin.committees.index") }}" class="nav-link {{ request()->is('admin/committees') || request()->is('admin/committees/*') ? 'active' : '' }}">
                         <i class="fa-fw fas fa-address-card"></i>
@@ -137,6 +139,8 @@
                         </p>
                     </a>
                 </li>
+                @endcan
+                @can('workshop_access')
                 <li class="nav-item">
                     <a href="{{ route("admin.workshops.index") }}" class="nav-link {{ request()->is('admin/workshops') || request()->is('admin/workshops/*') ? 'active' : '' }}">
                         <i class="fa-fw fas fa-calendar"></i>
@@ -145,7 +149,8 @@
                         </p>
                     </a>
                 </li>
-
+                @endcan
+                @can('author_access')
                 <li class="nav-item">
                     <a href="{{ route("admin.authors.index") }}" class="nav-link {{ request()->is('admin/authors') || request()->is('admin/authors/*') ? 'active' : '' }}">
                         <i class="fa-fw fas fa-scroll"></i>
@@ -154,16 +159,17 @@
                         </p>
                     </a>
                 </li>
+                @endcan
+                @can('news_access')
                 <li class="nav-item">
                     <a href="{{ route("admin.news.index") }}" class="nav-link {{ request()->is('admin/news') || request()->is('admin/news/*') ? 'active' : '' }}">
                         <i class="fa-fw fas fa-newspaper"></i>
                         <p>
-                            {{-- <span>{{ trans('cruds.news.title') }}</span>--}}
-                            <span>news</span>
+                            <span>{{ trans('cruds.news.title') }}</span>
                         </p>
                     </a>
                 </li>
-                {{--@endcan--}}
+                @endcan
                 @can('gallery_access')
                 <li class="nav-item">
                     <a href="{{ route("admin.galleries.index") }}" class="nav-link {{ request()->is('admin/galleries') || request()->is('admin/galleries/*') ? 'active' : '' }}">
