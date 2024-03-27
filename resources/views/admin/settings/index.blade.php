@@ -49,7 +49,7 @@
                                 {{ $setting->key ?? '' }}
                             </td>
                             <td>
-                                {{ $setting->value ?? '' }}
+                                {{ strip_tags($setting->value ?? '') }}
                             </td>
                             <td>
                                 @can('setting_show')

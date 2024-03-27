@@ -2,8 +2,8 @@
 
   <div class="container">
     <div class="section-header">
-      <h2>Hotels</h2>
-      <p>Here are some nearby hotels</p>
+      <h2>{{__('messages.hotels.title')}}</h2>
+      <p>{{__('messages.hotels.subtitle')}}</p>
     </div>
 
     <div class="row">
@@ -13,7 +13,7 @@
             <div class="hotel-img">
               <img src="{{ $hotel->photo->getUrl() }}" alt="{{ $hotel->name }}" class="img-fluid">
             </div>
-            <h3><a href="#">{{ $hotel->name }}</a></h3>
+            <h3><a href="{{ $hotel->link }}">{{ $hotel->name }}</a></h3>
             <div class="stars">
               @for($i = 0; $i < $hotel->rating; $i++)
                 <i class="fa fa-star"></i>

@@ -1,8 +1,8 @@
 <section id="schedule" class="section-with-bg">
   <div class="container wow fadeInUp">
     <div class="section-header">
-      <h2>Event Schedule</h2>
-      <p>Here is our event schedule</p>
+      <h2>{{__('messages.schedule.title')}}</h2>
+      <p>{{__('messages.schedule.subtitle')}}</p>
     </div>
 
     <ul class="nav nav-tabs" role="tablist">
@@ -13,8 +13,9 @@
       @endforeach
     </ul>
 
-    <h3 class="sub-heading">Voluptatem nulla veniam soluta et corrupti consequatur neque eveniet officia. Eius
-      necessitatibus voluptatem quis labore perspiciatis quia.</h3>
+    <h3 class="sub-heading">
+
+    </h3>
 
     <div class="tab-content row justify-content-center">
       @foreach($schedules as $key => $day)

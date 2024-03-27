@@ -58,7 +58,7 @@
                                 {{ $speaker->name ?? '' }}
                             </td>
                             <td>
-                                {{ $speaker->description ?? '' }}
+                                {{ strip_tags($speaker->description ?? '') }}
                             </td>
                             <td>
                                 {{ $speaker->twitter ?? '' }}

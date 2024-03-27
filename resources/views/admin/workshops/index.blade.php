@@ -1,44 +1,35 @@
 @extends('layouts.admin')
 @section('content')
-@can('hotel_create')
+{{--@can('workshop_create')--}}
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
-            <a class="btn btn-success" href="{{ route("admin.hotels.create") }}">
-                {{ trans('global.add') }} {{ trans('cruds.hotel.title_singular') }}
+            <a class="btn btn-success" href="{{ route("admin.workshops.create") }}">
+                {{ trans('global.add') }} {{ trans('Programs') }}
             </a>
         </div>
     </div>
-@endcan
+{{--@endcan--}}
 <div class="card">
     <div class="card-header">
-        {{ trans('cruds.hotel.title_singular') }} {{ trans('global.list') }}
+        {{ trans('cruds.workshop.title_singular') }} {{ trans('global.list') }}
     </div>
 
     <div class="card-body">
         <div class="table-responsive">
-            <table class=" table table-bordered table-striped table-hover datatable datatable-Hotel">
+            <table class=" table table-bordered table-striped table-hover datatable datatable-workshop">
                 <thead>
                     <tr>
                         <th width="10">
 
                         </th>
                         <th>
-                            {{ trans('cruds.hotel.fields.id') }}
+                            {{ trans('cruds.workshop.fields.id') }}
                         </th>
                         <th>
-                            {{ trans('cruds.hotel.fields.name') }}
+                            {{ trans('cruds.workshop.fields.name') }}
                         </th>
                         <th>
-                            {{ trans('cruds.hotel.fields.photo') }}
-                        </th>
-                        <th>
-                            {{ trans('cruds.hotel.fields.address') }}
-                        </th>
-                        <th>
-                            {{ trans('cruds.hotel.fields.description') }}
-                        </th>
-                        <th>
-                            {{ trans('cruds.hotel.fields.rating') }}
+                            {{ trans('cruds.workshop.fields.photo') }}
                         </th>
                         <th>
                             &nbsp;
@@ -46,53 +37,44 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($hotels as $key => $hotel)
-                        <tr data-entry-id="{{ $hotel->id }}">
+                    @foreach($workshops as $key => $workshop)
+                        <tr data-entry-id="{{ $workshop->id }}">
                             <td>
 
                             </td>
                             <td>
-                                {{ $hotel->id ?? '' }}
+                                {{ $workshop->id ?? '' }}
                             </td>
                             <td>
-                                {{ $hotel->name ?? '' }}
+                                {{ $workshop->name ?? '' }}
                             </td>
                             <td>
-                                @if($hotel->photo)
-                                    <a href="{{ $hotel->photo->getUrl() }}" target="_blank">
-                                        <img src="{{ $hotel->photo->getUrl('thumb') }}" width="50px" height="50px">
+                                @if($workshop->photo)
+                                    <a href="{{ $workshop->photo->getUrl() }}" target="_blank">
+                                        <img src="{{ $workshop->photo->getUrl('thumb') }}" width="50px" height="50px">
                                     </a>
                                 @endif
                             </td>
                             <td>
-                                {{ $hotel->address ?? '' }}
-                            </td>
-                            <td>
-                                {{ strip_tags($hotel->description ?? '') }}
-                            </td>
-                            <td>
-                                {{ $hotel->rating ?? '' }}
-                            </td>
-                            <td>
-                                @can('hotel_show')
-                                    <a class="btn btn-xs btn-primary" href="{{ route('admin.hotels.show', $hotel->id) }}">
+{{--                                @can('workshop_show')--}}
+                                    <a class="btn btn-xs btn-primary" href="{{ route('admin.workshops.show', $workshop->id) }}">
                                         {{ trans('global.view') }}
                                     </a>
-                                @endcan
+                                {{--@endcan--}}
 
-                                @can('hotel_edit')
-                                    <a class="btn btn-xs btn-info" href="{{ route('admin.hotels.edit', $hotel->id) }}">
+{{--                                @can('workshop_edit')--}}
+                                    <a class="btn btn-xs btn-info" href="{{ route('admin.workshops.edit', $workshop->id) }}">
                                         {{ trans('global.edit') }}
                                     </a>
-                                @endcan
+                                {{--@endcan--}}
 
-                                @can('hotel_delete')
-                                    <form action="{{ route('admin.hotels.destroy', $hotel->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
+{{--                                @can('workshop_delete')--}}
+                                    <form action="{{ route('admin.workshops.destroy', $workshop->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
                                         <input type="hidden" name="_method" value="DELETE">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                         <input type="submit" class="btn btn-xs btn-danger" value="{{ trans('global.delete') }}">
                                     </form>
-                                @endcan
+                                {{--@endcan--}}
 
                             </td>
 
@@ -109,11 +91,11 @@
 <script>
     $(function () {
   let dtButtons = $.extend(true, [], $.fn.dataTable.defaults.buttons)
-@can('hotel_delete')
+@can('workshop_delete')
   let deleteButtonTrans = '{{ trans('global.datatables.delete') }}'
   let deleteButton = {
     text: deleteButtonTrans,
-    url: "{{ route('admin.hotels.massDestroy') }}",
+    url: "{{ route('admin.workshops.massDestroy') }}",
     className: 'btn-danger',
     action: function (e, dt, node, config) {
       var ids = $.map(dt.rows({ selected: true }).nodes(), function (entry) {
@@ -143,7 +125,7 @@
     order: [[ 1, 'desc' ]],
     pageLength: 100,
   });
-  $('.datatable-Hotel:not(.ajaxTable)').DataTable({ buttons: dtButtons })
+  $('.datatable-workshop:not(.ajaxTable)').DataTable({ buttons: dtButtons })
     $('a[data-toggle="tab"]').on('shown.bs.tab', function(e){
         $($.fn.dataTable.tables(true)).DataTable()
             .columns.adjust();

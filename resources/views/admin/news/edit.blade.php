@@ -3,27 +3,27 @@
 
 <div class="card">
     <div class="card-header">
-        {{ trans('global.edit') }} {{ trans('cruds.hotel.title_singular') }}
+        {{ trans('global.edit') }} {{ trans('cruds.news.title_singular') }}
     </div>
 
     <div class="card-body">
-        <form action="{{ route("admin.hotels.update", [$hotel->id]) }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route("admin.news.update", [$news->id]) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
             <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
-                <label for="name">{{ trans('cruds.hotel.fields.name') }}*</label>
-                <input type="text" id="name" name="name" class="form-control" value="{{ old('name', isset($hotel) ? $hotel->name : '') }}" required>
+                <label for="name">{{ trans('cruds.news.fields.name') }}*</label>
+                <input type="text" id="name" name="name" class="form-control" value="{{ old('name', isset($news) ? $news->name : '') }}" required>
                 @if($errors->has('name'))
                     <p class="help-block">
                         {{ $errors->first('name') }}
                     </p>
                 @endif
                 <p class="helper-block">
-                    {{ trans('cruds.hotel.fields.name_helper') }}
+                    {{ trans('cruds.news.fields.name_helper') }}
                 </p>
             </div>
             <div class="form-group {{ $errors->has('photo') ? 'has-error' : '' }}">
-                <label for="photo">{{ trans('cruds.hotel.fields.photo') }}</label>
+                <label for="photo">{{ trans('cruds.news.fields.photo') }}</label>
                 <div class="needsclick dropzone" id="photo-dropzone">
 
                 </div>
@@ -33,55 +33,19 @@
                     </p>
                 @endif
                 <p class="helper-block">
-                    {{ trans('cruds.hotel.fields.photo_helper') }}
-                </p>
-            </div>
-            <div class="form-group {{ $errors->has('link') ? 'has-error' : '' }}">
-                <label for="link">{{ trans('cruds.hotel.fields.link') }}</label>
-                <input type="text" id="link" name="link" class="form-control" value="{{ old('link', isset($hotel) ? $hotel->link : '') }}">
-                @if($errors->has('link'))
-                    <p class="help-block">
-                        {{ $errors->first('link') }}
-                    </p>
-                @endif
-                <p class="helper-block">
-                    {{ trans('cruds.hotel.fields.link_helper') }}
-                </p>
-            </div>
-            <div class="form-group {{ $errors->has('address') ? 'has-error' : '' }}">
-                <label for="address">{{ trans('cruds.hotel.fields.address') }}</label>
-                <input type="text" id="address" name="address" class="form-control" value="{{ old('address', isset($hotel) ? $hotel->address : '') }}">
-                @if($errors->has('address'))
-                    <p class="help-block">
-                        {{ $errors->first('address') }}
-                    </p>
-                @endif
-                <p class="helper-block">
-                    {{ trans('cruds.hotel.fields.address_helper') }}
+                    {{ trans('cruds.news.fields.photo_helper') }}
                 </p>
             </div>
             <div class="form-group {{ $errors->has('description') ? 'has-error' : '' }}">
-                <label for="description">{{ trans('cruds.hotel.fields.description') }}</label>
-                <textarea id="description" name="description" class="form-control ">{{ old('description', isset($hotel) ? $hotel->description : '') }}</textarea>
+                <label for="description">{{ trans('cruds.news.fields.description') }}</label>
+                <textarea id="description" name="description" class="form-control ">{{ old('description', isset($news) ? $news->description : '') }}</textarea>
                 @if($errors->has('description'))
                     <p class="help-block">
                         {{ $errors->first('description') }}
                     </p>
                 @endif
                 <p class="helper-block">
-                    {{ trans('cruds.hotel.fields.description_helper') }}
-                </p>
-            </div>
-            <div class="form-group {{ $errors->has('rating') ? 'has-error' : '' }}">
-                <label for="rating">{{ trans('cruds.hotel.fields.rating') }}</label>
-                <input type="number" id="rating" name="rating" class="form-control" value="{{ old('rating', isset($hotel) ? $hotel->rating : '') }}" step="1">
-                @if($errors->has('rating'))
-                    <p class="help-block">
-                        {{ $errors->first('rating') }}
-                    </p>
-                @endif
-                <p class="helper-block">
-                    {{ trans('cruds.hotel.fields.rating_helper') }}
+                    {{ trans('cruds.news.fields.description_helper') }}
                 </p>
             </div>
             <div>
@@ -97,7 +61,7 @@
 @section('scripts')
 <script>
     Dropzone.options.photoDropzone = {
-    url: '{{ route('admin.hotels.storeMedia') }}',
+    url: '{{ route('admin.news.storeMedia') }}',
     maxFilesize: 2, // MB
     acceptedFiles: '.jpeg,.jpg,.png,.gif',
     maxFiles: 1,
@@ -122,8 +86,8 @@
       }
     },
     init: function () {
-@if(isset($hotel) && $hotel->photo)
-      var file = {!! json_encode($hotel->photo) !!}
+@if(isset($news) && $news->photo)
+      var file = {!! json_encode($news->photo) !!}
           this.options.addedfile.call(this, file)
       this.options.thumbnail.call(this, file, file.url)
       file.previewElement.classList.add('dz-complete')

@@ -5,8 +5,8 @@
   <section id="speakers-details" class="wow fadeIn">
     <div class="container">
       <div class="section-header">
-        <h2>Speaker Details</h2>
-        <p>Praesentium ut qui possimus sapiente nulla.</p>
+        <h2>{{__('messages.speaker-details.title')}}</h2>
+        <p>{{ $speaker->name }}</p>
       </div>
 
       <div class="row">
@@ -22,7 +22,7 @@
               <a href="{{ $speaker->facebook }}"><i class="fa fa-facebook"></i></a>
               <a href="{{ $speaker->linkedin }}"><i class="fa fa-linkedin"></i></a>
             </div>
-            <p>{{ $speaker->full_description }}</p>
+            <p>{!! $speaker->full_description !!}</p>
           </div>
         </div>
       </div>

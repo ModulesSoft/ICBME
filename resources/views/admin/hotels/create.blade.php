@@ -35,6 +35,18 @@
                     {{ trans('cruds.hotel.fields.photo_helper') }}
                 </p>
             </div>
+            <div class="form-group {{ $errors->has('link') ? 'has-error' : '' }}">
+                <label for="link">{{ trans('cruds.hotel.fields.link') }}</label>
+                <input type="text" id="link" name="link" class="form-control" value="{{ old('link', isset($hotel) ? $hotel->link : '') }}">
+                @if($errors->has('link'))
+                    <p class="help-block">
+                        {{ $errors->first('link') }}
+                    </p>
+                @endif
+                <p class="helper-block">
+                    {{ trans('cruds.hotel.fields.link_helper') }}
+                </p>
+            </div>
             <div class="form-group {{ $errors->has('address') ? 'has-error' : '' }}">
                 <label for="address">{{ trans('cruds.hotel.fields.address') }}</label>
                 <input type="text" id="address" name="address" class="form-control" value="{{ old('address', isset($hotel) ? $hotel->address : '') }}">
@@ -129,7 +141,6 @@
             node = _ref[_i]
             _results.push(node.textContent = message)
         }
-
         return _results
     }
 }

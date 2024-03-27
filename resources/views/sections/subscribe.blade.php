@@ -1,8 +1,8 @@
 <section id="subscribe">
   <div class="container wow fadeInUp">
     <div class="section-header">
-      <h2>Newsletter</h2>
-      <p>Rerum numquam illum recusandae quia mollitia consequatur.</p>
+      <h2>{{__('messages.subscribe.title')}}</h2>
+      <p>{{__('messages.subscribe.subtitle')}}</p>
     </div>
 
     <form method="POST" action="#">
