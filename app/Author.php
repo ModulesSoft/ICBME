@@ -7,12 +7,15 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
+use Spatie\Translatable\HasTranslations;
 
 class Author extends Model implements HasMedia
 {
     use SoftDeletes, InteractsWithMedia;
+    use HasTranslations;
 
     public $table = 'authors';
+    public $translatable = ['name', 'description'];
 
     protected $appends = [
         'photo',

@@ -7,12 +7,15 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
+use Spatie\Translatable\HasTranslations;
 
 class Hotel extends Model implements HasMedia
 {
     use SoftDeletes, InteractsWithMedia;
+    use HasTranslations;
 
     public $table = 'hotels';
+    public $translatable = ['name', 'address', 'description'];
 
     protected $appends = [
         'photo',

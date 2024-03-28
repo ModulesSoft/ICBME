@@ -7,10 +7,12 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
+use Spatie\Translatable\HasTranslations;
 
 class Speaker extends Model implements HasMedia
 {
     use SoftDeletes, InteractsWithMedia;
+    use HasTranslations;
 
     public $table = 'speakers';
 
@@ -35,6 +37,8 @@ class Speaker extends Model implements HasMedia
         'description',
         'full_description',
     ];
+
+    protected $translatable = ['name', 'description', 'full_description'];
 
     public function registerMediaConversions(Media $media = null): void
     {

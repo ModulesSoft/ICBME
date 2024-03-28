@@ -7,12 +7,15 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
+use Spatie\Translatable\HasTranslations;
 
 class Gallery extends Model implements HasMedia
 {
     use SoftDeletes, InteractsWithMedia;
+    use HasTranslations;
 
     public $table = 'galleries';
+    public $translatable = ['name'];
 
     protected $appends = [
         'photos',
