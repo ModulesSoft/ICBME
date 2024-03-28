@@ -13,7 +13,7 @@ class CreateVenuesTable extends Migration
 
             $table->string('name');
 
-            $table->string('address');
+            $table->longText('address');
 
             $table->string('latitude');
 
