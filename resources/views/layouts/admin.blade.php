@@ -81,7 +81,7 @@
 
     <footer class="main-footer">
         <div class="float-right d-none d-sm-block">
-            <a href="https://majhoolsoft.com">By Majhoolsoft!</a>
+            <a href="https://modulessoft.com">By ModulesSoft!</a>
         </div>
         <strong> &copy;</strong> {{ trans('global.allRightsReserved') }}
     </footer>
