@@ -12,6 +12,6 @@ class WorkshopsController extends Controller
     {
         $workshops = Workshop::all();
         $settings = Setting::pluck('value', 'key');
-        return view('sections.workshops', ['workshops' => $workshops, 'settings' => $settings]);
+        return view('pages.workshops', ['workshops' => $workshops, 'settings' => $settings]);
     }
 }

@@ -1,6 +1,6 @@
 @extends('layouts.main')
-<section id="news">
-    <div class="container wow fadeInUp">
+<section id="news" class="">
+    <div class="container">
         <div class="section-header">
             <h2>{{ __('messages.news.title') }}</h2>
             <p>{{ __('messages.news.subtitle') }}</p>
