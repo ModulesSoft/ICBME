@@ -11,7 +11,7 @@
           <input type="text" class="form-control" placeholder="Enter your Email">
         </div>
         <div class="col-auto">
-          <button type="submit">Subscribe</button>
+          <button type="submit">{{__('global.subscribe')}}</button>
         </div>
       </div>
     </form>

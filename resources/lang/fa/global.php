@@ -253,4 +253,7 @@ return [
     'no_alerts'                            => 'هیچ هشداری',
     'calendar'                             => 'تقویم',
     'messenger'                            => 'پیام‌رسان',
+    'read_more'                            => 'مطالعه بیشتر',
+    'show_all_news'                        => 'مشاهده همه اخبار',
+    'subscribe'                            =>  ' عضویت'
 ];

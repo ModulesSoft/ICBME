@@ -249,4 +249,8 @@ return [
     'no_alerts'                            => 'No alerts',
     'calendar'                             => 'Calendar',
     'messenger'                            => 'Messenger',
+    'read_more'                            => 'Read More',
+    'read_more'                            => 'Read More',
+    'show_all_news'                        => 'Show All News',
+    'subscribe'                            =>  'Subscribe'
 ];
