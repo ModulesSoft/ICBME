@@ -65,10 +65,14 @@
                     </div>
                 </li>
                 <li class="language-switch">
-                    <a href="" hreflang="LOCALE PREFIX">
+                    <a href="{{ route("locale.toggle") }}" hreflang="LOCALE PREFIX">
                         <i class="fa fa-globe" style="color: white;" aria-hidden="true"></i>
                         <span>
+                            @if(app()->getLocale() == 'en')
                             فارسی
+                            @else
+                            English
+                            @endif
                         </span>
                     </a>
                 </li>
