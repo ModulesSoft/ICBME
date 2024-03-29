@@ -947,7 +947,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 --------------------------------------------------------------*/
 
 #venue {
-    padding: 60px 0;
+    /* padding: 60px 0; */
+    padding: 0;
 }
 
 #venue .container-fluid {
