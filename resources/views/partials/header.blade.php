@@ -1,6 +1,6 @@
 <header id="header" @if (Route::current()->getName() != 'home') class="header-fixed" @endif>
     <div>
-        <div id="logo" class="pull-left">
+        <div id="logo">
             <h1>
                 <div class="btn-group">
                     <a type="button" class="btn btn-transparent shadow-none" href="{{ route('home') }}">
@@ -23,7 +23,7 @@
             </h1>
         </div>
 
-        <nav id="nav-menu-container" style="{{ __('global.dir') === 'rtl' ? 'float: left;' : '' }}">
+        <nav id="nav-menu-container">
             <ul class="nav-menu">
                 <li style="{{ __('global.dir') === 'rtl' ? 'float: right;' : '' }}">
                     <a href="{{ Route::current()->getName() != 'home' ? route('home') : '' }}#speakers">{{__('cruds.speaker.title')}}</a>
