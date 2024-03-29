@@ -12,6 +12,6 @@ class SponsorsController extends Controller
     {
         $sponsors = Sponsor::all();
         $settings = Setting::pluck('value', 'key');
-        return view('sections.sponsors', ['sponsors' => $sponsors, 'settings' => $settings]);
+        return view('pages.sponsors', ['sponsors' => $sponsors, 'settings' => $settings]);
     }
 }
