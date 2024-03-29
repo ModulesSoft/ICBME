@@ -389,10 +389,14 @@ h6 {
     cursor: pointer;
 }
 
+[dir="rtl"] #mobile-nav-toggle {
+    right: unset;
+    left: 1rem;
+}
+
 #mobile-nav-toggle i {
     color: #fff;
 }
-
 /* Mobile Nav Styling */
 
 #mobile-nav {
@@ -416,6 +420,7 @@ h6 {
 
 #mobile-nav ul li {
     position: relative;
+    width: 100%;
 }
 
 #mobile-nav ul li a {
