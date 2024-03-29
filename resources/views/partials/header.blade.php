@@ -29,7 +29,7 @@
                     <a href="{{ Route::current()->getName() != 'home' ? route('home') : '' }}#speakers">{{__('cruds.speaker.title')}}</a>
                 </li>
                 <li style="{{ __('global.dir') === 'rtl' ? 'float: right;' : '' }}">
-                    <a href="{{ Route::current()->getName() != 'home' ? route('home') : '' }}#venue">{{__('cruds.venue.title')}}</a>
+                    <a href="{{ Route::current()->getName() != 'home' ? route('home') : '' }}#venue">{{__('cruds.venue.title_singular')}}</a>
                 </li>
                 <li style="{{ __('global.dir') === 'rtl' ? 'float: right;' : '' }}">
                     <a href="{{ Route::current()->getName() != 'home' ? route('home') : '' }}#thesis-festival">{{__('cruds.thesis.title_singular')}}</a>
