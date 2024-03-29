@@ -2,7 +2,7 @@
 
 @section('content')
 <main id="main" class="main-page">
-  <section id="speakers-details" class="wow fadeIn">
+  <section id="speakers-details">
     <div class="container">
       <div class="section-header">
         <h2>{{__('messages.speaker-details.title')}}</h2>

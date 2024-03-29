@@ -1,5 +1,5 @@
 @extends('layouts.main')
-<section id="news" class="">
+<section id="news">
     <div class="container">
         <div class="section-header">
             <h2>{{ __('messages.news.title') }}</h2>
