@@ -19,7 +19,13 @@
                                     @php
                                     $dt = new Carbon\Carbon($new->created_at);
                                     @endphp
-                                    <time datetime="{{$dt}}">{{$dt->toFormattedDateString()}}</time>
+                                    <time datetime="{{$dt}}">
+                                        @if(__('global.dir') === 'rtl')
+                                        {{\Morilog\Jalali\Jalalian::fromDateTime($new->created_at)->format('%B %d، %Y')}}
+                                        @else
+                                        {{$dt->toFormattedDateString()}}
+                                        @endif
+                                    </time>
                                 </span>
                             </div>
                             <p>
@@ -33,7 +39,7 @@
                         @endif
                     </a>
                     <div class="pull-right">
-                        <a class="btn button btn-outline-info mb-4" href="{{ route('news', $new) }}">read more</a>
+                        <a class="btn button btn-outline-info mb-4" href="{{ route('news', $new) }}">{{__('global.read_more')}}</a>
                     </div>
                 </div>
         </div>
@@ -41,7 +47,7 @@
         @endforeach
         <div class="col-12 mt-4">
             <div class="d-flex justify-content-center">
-                <a class="btn button btn-outline-warning" href="{{ Route::current()->getName() != 'news' ? route('news') : '' }}">Show All News</a>
+                <a class="btn button btn-outline-warning" href="{{ Route::current()->getName() != 'news' ? route('news') : '' }}">{{__('global.show_all_news')}}</a>
             </div>
         </div>
     </div>

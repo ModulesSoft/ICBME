@@ -6,7 +6,15 @@
         <div class="container">
             <div class="section-header">
                 <h2>{{ $new->name }}</h2>
-                <p><time datetime="{{new Carbon\Carbon($new->created_at)}}">{{(new Carbon\Carbon($new->created_at))->toFormattedDateString()}}</time></p>
+                <p>
+                    <time datetime="{{$new->createdat}}">
+                        @if(__('global.dir') === 'rtl')
+                        {{\Morilog\Jalali\Jalalian::fromDateTime($new->created_at)->format('%B %d، %Y')}}
+                        @else
+                        {{$dt->toFormattedDateString()}}
+                        @endif
+                    </time>
+                </p>
             </div>
 
             <div class="row">
