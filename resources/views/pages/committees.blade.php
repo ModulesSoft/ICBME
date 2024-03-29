@@ -1,5 +1,5 @@
 @extends('layouts.main')
-<section id="committees" class="section-with-bg wow fadeIn">
+<section id="committees" class="section-with-bg">
 
   <div class="container">
     <div class="section-header">

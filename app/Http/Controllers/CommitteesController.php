@@ -12,6 +12,6 @@ class CommitteesController extends Controller
     {
         $committees = Committee::all();
         $settings = Setting::pluck('value', 'key');
-        return view('sections.committees', ['committees' => $committees, 'settings' => $settings]);
+        return view('pages.committees', ['committees' => $committees, 'settings' => $settings]);
     }
 }
