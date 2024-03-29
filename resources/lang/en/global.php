@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'dir'                                  => 'ltr',
     'actions'                              => 'Actions',
     'add'                                  => 'Add',
     'allRightsReserved'                    => 'All rights reserved.',
