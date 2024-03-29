@@ -375,4 +375,22 @@ return [
             'deleted_at_helper' => '',
         ],
     ],
+    'poster'          => [
+        'title'          => 'Posters',
+        'title_singular' => 'Poster',
+        'fields'         => [
+            'id'                => 'ID',
+            'id_helper'         => '',
+            'name'              => 'Name',
+            'name_helper'       => '',
+            'poster'             => 'Poster',
+            'poster_helper'      => '',
+            'created_at'        => 'Created at',
+            'created_at_helper' => '',
+            'updated_at'        => 'Updated at',
+            'updated_at_helper' => '',
+            'deleted_at'        => 'Deleted at',
+            'deleted_at_helper' => '',
+        ],
+    ],
 ];

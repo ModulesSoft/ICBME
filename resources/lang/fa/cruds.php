@@ -136,7 +136,7 @@ return [
         ],
     ],
     'venue'          => [
-        'title'          => 'مکان‌ها',
+        'title'          => 'مکان‌ها و روادید',
         'title_singular' => 'مکان',
         'fields'         => [
             'id'                 => 'شناسه',
@@ -367,6 +367,24 @@ return [
             'price_helper'      => '',
             'amenities'         => 'امکانات',
             'amenities_helper'  => '',
+            'created_at'        => 'تاریخ ایجاد',
+            'created_at_helper' => '',
+            'updated_at'        => 'تاریخ بروزرسانی',
+            'updated_at_helper' => '',
+            'deleted_at'        => 'تاریخ حذف',
+            'deleted_at_helper' => '',
+        ],
+    ],
+    'poster'          => [
+        'title'          => ' پوسترها',
+        'title_singular' => 'پوستر',
+        'fields'         => [
+            'id'                => 'شناسه',
+            'id_helper'         => '',
+            'name'              => 'نام',
+            'name_helper'       => '',
+            'poster'             => 'پوستر',
+            'poster_helper'      => '',
             'created_at'        => 'تاریخ ایجاد',
             'created_at_helper' => '',
             'updated_at'        => 'تاریخ بروزرسانی',
