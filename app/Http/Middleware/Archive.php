@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -18,19 +19,34 @@ class Archive
      */
     public function handle(Request $request, Closure $next): Response
     {
-        // Get the current date and time
         $currentDateTime = Carbon::now();
 
-        // Modify the day and month values
-        $currentDateTime->day(Config::get('services.archive.day'));
-        $currentDateTime->month(Config::get('services.archive.month'));
-        $currentDateTime->startOfDay();
-        $currentDateTime->addYear();
+        // Create the archive date
+        $archiveDateTime = $currentDateTime->copy();
+        $archiveDateTime->day(Config::get('services.archive.day'));
+        $archiveDateTime->month(Config::get('services.archive.month'));
+        $archiveDateTime->startOfDay();
 
-        // Format the date as a string
-        $formattedDateTime = $currentDateTime->toDateTimeString();
+        $dbconnection = Config::get('database.default');
+        $rawDBName = Config::get("database.connections.$dbconnection.database");
 
-        Session::put('archiveDatetime', $formattedDateTime);
+        // Check if the the archive date is past
+        if ($currentDateTime > $archiveDateTime) {
+            $nextArchiveDateTime = $archiveDateTime->copy();
+            $nextArchiveDateTime->addYear();
+            // Set a session for archive date (is used in front-end)
+            Session::put('archiveDatetime', $nextArchiveDateTime->toDateTimeString());
+            // Set new database name
+            Config::set("database.connections.$dbconnection.database", $rawDBName . $archiveDateTime->year);
+        } else {
+            $lastArchiveDateTime = $archiveDateTime->copy();
+            $lastArchiveDateTime->subYear();
+            // Set a session for archive date (is used in front-end)
+            Session::put('archiveDatetime', $archiveDateTime->toDateTimeString());
+            // Set new database name
+            Config::set("database.connections.$dbconnection.database", $rawDBName . $lastArchiveDateTime->year);
+        }
+        DB::purge('mysql');
 
         return $next($request);
     }
