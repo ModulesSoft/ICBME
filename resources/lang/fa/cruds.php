@@ -393,4 +393,22 @@ return [
             'deleted_at_helper' => '',
         ],
     ],
+    'thesis'          => [
+        'title'          => 'جشنواره پایان‌نامه‌ها',
+        'title_singular' => 'جشنواره پایان‌نامه‌',
+        'fields'         => [
+            'id'                => 'ID',
+            'id_helper'         => '',
+            'name'              => 'Name',
+            'name_helper'       => '',
+            'thesis'             => 'جشنواره پایان‌نامه‌',
+            'thesis_helper'      => '',
+            'created_at'        => 'Created at',
+            'created_at_helper' => '',
+            'updated_at'        => 'Updated at',
+            'updated_at_helper' => '',
+            'deleted_at'        => 'Deleted at',
+            'deleted_at_helper' => '',
+        ],
+    ]
 ];
