@@ -13,9 +13,11 @@
                     <div class="dropdown-menu bg-secondary">
                         <a class="dropdown-item border-secondary bg-secondary" href="/2020/en">2020</a>
                         <a class="dropdown-item border-secondary bg-secondary" href="/2021/en">2021</a>
-                        <a class="dropdown-item border-secondary bg-secondary" href="/2022/en">2022</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item border-secondary" href="/">2023</a>
+                        <form method="POST" action="{{ route('year.change') }}">
+                            @csrf
+                            <input type="hidden" name="year" value="2023">
+                            <button class="dropdown-item border-secondary bg-secondary" type="submit">2023</button>
+                        </form>
                     </div>
                 </div>
             </h1>
@@ -52,13 +54,13 @@
                     <a href="{{ Route::current()->getName() != 'workshops' ? route('workshops') : '' }}">Program
                         schedule</a>
                 </li>
-                <li class="{{ Route::current()->getName() == 'author' ? 'menu-active' : 'buy-tickets' }}">
-                    <a class="dropdown-toggle {{ Route::current()->getName() == 'author' ? '' : 'btn btn-secondary ' }}" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="{{ Route::current()->getName() != 'authors' ? route('authors') : '' }}">For
+                <li class="{{ Route::current()->getName() == 'author' ? 'menu-active' : '' }}">
+                    <a class="dropdown-toggle {{ Route::current()->getName() == 'author' ? '' : '' }}" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="{{ Route::current()->getName() != 'authors' ? route('authors') : '' }}">For
                         Authors
                     </a>
-                    <div class="dropdown-menu bg-transparent border-0" aria-labelledby="dropdownMenuLink">
+                    <div class="dropdown-menu bg-dark border border-rounded border-secondary border-top-0" aria-labelledby="dropdownMenuLink">
                         @foreach (App\Author::all() as $fa)
-                        <a class="dropdown-item bg-secondary border-secondary" style="display: block;" href="{{ route('author', $fa->id) }}">
+                        <a class="bg-dark border-rounded border-0 py-2" style="display: block;" href="{{ route('author', $fa->id) }}">
                             {{ $fa->name }}
                         </a>
                         @endforeach
