@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{app()->getLocale()}}" dir="{{__('global.dir')}}">
 
 <head>
   <meta charset="utf-8">

@@ -1,4 +1,4 @@
-<aside class="main-sidebar sidebar-dark-primary elevation-4" style="min-height: 917px;">
+<aside class="main-sidebar sidebar-dark-primary elevation-4" style="min-height: 917px; {{ __('global.dir') === 'rtl' ? 'right: 0;' : '' }}">
     <!-- Brand Logo -->
     <a href="#" class="brand-link">
         <span class="brand-text font-weight-light">{{ trans('panel.site_title') }}</span>
@@ -10,7 +10,7 @@
 
         <!-- Sidebar Menu -->
         <nav class="mt-2">
-            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false" style="{{ __('global.dir') === 'rtl' ? 'padding-right: 0;' : '' }}">
                 <li class="nav-item">
                     <a href="{{ route("locale.toggle") }}" class="nav-link bg-info">
                         <i class="fa-fw fas fa-globe">

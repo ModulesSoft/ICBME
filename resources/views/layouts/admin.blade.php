@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{app()->getLocale()}}" dir="{{__('global.dir')}}">
 
 <head>
     <meta charset="UTF-8">
@@ -24,18 +24,18 @@
     @yield('styles')
 </head>
 
-<body class="sidebar-mini layout-fixed" style="height: auto;">
-<div class="wrapper">
-    <nav class="main-header navbar navbar-expand bg-white navbar-light border-bottom">
-        <!-- Left navbar links -->
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" data-widget="pushmenu" href="#"><i class="fa fa-bars"></i></a>
-            </li>
-        </ul>
+<body class="sidebar-mini layout-fixed" style="height: auto;  {{ __('global.dir') === 'rtl' ? 'right: 0; text-align:right' : '' }}">
+    <div class="wrapper">
+        <nav class="main-header navbar navbar-expand bg-white navbar-light border-bottom" style="{{ __('global.dir') === 'rtl' ? 'margin-right: 250px;margin-left:0' : '' }}">
+            <!-- Left navbar links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href="#"><i class="fa fa-bars"></i></a>
+                </li>
+            </ul>
 
-        <!-- Right navbar links -->
-        @if(count(config('panel.available_languages', [])) > 1)
+            <!-- Right navbar links -->
+            @if(count(config('panel.available_languages', [])) > 1)
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item dropdown">
                     <a class="nav-link" data-toggle="dropdown" href="#">
@@ -43,52 +43,51 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-right">
                         @foreach(config('panel.available_languages') as $langLocale => $langName)
-                            <a class="dropdown-item"
-                               href="{{ url()->current() }}?change_language={{ $langLocale }}">{{ strtoupper($langLocale) }}
-                                ({{ $langName }})</a>
+                        <a class="dropdown-item" href="{{ url()->current() }}?change_language={{ $langLocale }}">{{ strtoupper($langLocale) }}
+                            ({{ $langName }})</a>
                         @endforeach
                     </div>
                 </li>
             </ul>
-        @endif
+            @endif
 
-    </nav>
+        </nav>
 
-    @include('partials.menu')
-    <div class="content-wrapper" style="min-height: 917px;">
-        <!-- Main content -->
-        <section class="content" style="padding-top: 20px">
-            @if(session('message'))
+        @include('partials.menu')
+        <div class="content-wrapper" style="min-height: 917px; {{ __('global.dir') === 'rtl' ? 'margin-right: 250px; margin-left:0' : '' }}">
+            <!-- Main content -->
+            <section class="content" style="padding-top: 20px">
+                @if(session('message'))
                 <div class="row mb-2">
                     <div class="col-lg-12">
                         <div class="alert alert-success" role="alert">{{ session('message') }}</div>
                     </div>
                 </div>
-            @endif
-            @if($errors->count() > 0)
+                @endif
+                @if($errors->count() > 0)
                 <div class="alert alert-danger">
                     <ul class="list-unstyled">
                         @foreach($errors->all() as $error)
-                            <li>{{ $error }}</li>
+                        <li>{{ $error }}</li>
                         @endforeach
                     </ul>
                 </div>
-            @endif
-            @yield('content')
-        </section>
-        <!-- /.content -->
-    </div>
-
-    <footer class="main-footer">
-        <div class="float-right d-none d-sm-block">
-            <a href="https://modulessoft.com">By ModulesSoft!</a>
+                @endif
+                @yield('content')
+            </section>
+            <!-- /.content -->
         </div>
-        <strong> &copy;</strong> {{ trans('global.allRightsReserved') }}
-    </footer>
-    <form id="logoutform" action="{{ route('logout') }}" method="POST" style="display: none;">
-        {{ csrf_field() }}
-    </form>
-</div>
+
+        <footer class="main-footer">
+            <div class="float-right d-none d-sm-block">
+                <a href="https://modulessoft.com">By ModulesSoft!</a>
+            </div>
+            <strong> &copy;</strong> {{ trans('global.allRightsReserved') }}
+        </footer>
+        <form id="logoutform" action="{{ route('logout') }}" method="POST" style="display: none;">
+            {{ csrf_field() }}
+        </form>
+    </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
@@ -120,11 +119,11 @@
         let printButtonTrans = '{{ trans('global.datatables.print') }}'
         let colvisButtonTrans = '{{ trans('global.datatables.colvis') }}'
 
-        let languages = {
-            'en': 'https://cdn.datatables.net/plug-ins/1.10.19/i18n/English.json'
-        };
+            let languages = {
+                'en': 'https://cdn.datatables.net/plug-ins/1.10.19/i18n/English.json'
+            };
 
-        $.extend(true, $.fn.dataTable.Buttons.defaults.dom.button, {className: 'btn'})
+            $.extend(true, $.fn.dataTable.Buttons.defaults.dom.button, {className: 'btn'})
         $.extend(true, $.fn.dataTable.defaults, {
             language: {
                 url: languages['{{ app()->getLocale() }}']
