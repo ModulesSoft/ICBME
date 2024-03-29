@@ -44,7 +44,7 @@
                     <a href="{{ Route::current()->getName() != 'news' ? route('news') : '' }}">{{__('cruds.news.title')}}</a>
                 </li>
                 <li style="{{ __('global.dir') === 'rtl' ? 'float: right;' : '' }}" class="{{ Route::current()->getName() == 'galleries' ? 'menu-active' : '' }}">
-                    <a href="{{ Route::current()->getName() != 'gallery' ? route('galleries') : '' }}">{{__('cruds.gallery.title')}}</a>
+                    <a href="{{ Route::current()->getName() != 'gallery' ? route('galleries') : '' }}">{{__('cruds.gallery.title_singular')}}</a>
                 </li>
                 <li style="{{ __('global.dir') === 'rtl' ? 'float: right;' : '' }}" class="{{ Route::current()->getName() == 'sponsors' ? 'menu-active' : '' }}">
                     <a href="{{ Route::current()->getName() != 'sponsors' ? route('sponsors') : '' }}">{{__('cruds.sponsor.title')}}</a>
