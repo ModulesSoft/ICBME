@@ -30,4 +30,9 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'archive' => [
+        'day' =>  env('archiving_day', 01),
+        'month' =>  env('archiving_month', 01),
+    ]
+
 ];

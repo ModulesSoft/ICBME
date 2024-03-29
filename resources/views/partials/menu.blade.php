@@ -253,6 +253,9 @@
                         </p>
                     </a>
                 </li>
+                <li class="nav-item text-secondary">
+                    Next archiving date: <br>{{session('archiveDatetime')}}
+                </li>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->
