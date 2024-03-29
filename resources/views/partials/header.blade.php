@@ -23,40 +23,38 @@
             </h1>
         </div>
 
-        <nav id="nav-menu-container">
+        <nav id="nav-menu-container" style="{{ __('global.dir') === 'rtl' ? 'float: left;' : '' }}">
             <ul class="nav-menu">
-                <li>
-                    <a href="{{ Route::current()->getName() != 'home' ? route('home') : '' }}#speakers">Speakers</a>
+                <li style="{{ __('global.dir') === 'rtl' ? 'float: right;' : '' }}">
+                    <a href="{{ Route::current()->getName() != 'home' ? route('home') : '' }}#speakers">{{__('cruds.speaker.title')}}</a>
                 </li>
-                <li>
-                    <a style="font-size:0.7rem" href="{{ Route::current()->getName() != 'home' ? route('home') : '' }}#venue">Visa,Hotels<br>&amp;
-                        Venue</a>
+                <li style="{{ __('global.dir') === 'rtl' ? 'float: right;' : '' }}">
+                    <a style="font-size:0.7rem" href="{{ Route::current()->getName() != 'home' ? route('home') : '' }}#venue">{{__('cruds.venue.title')}}</a>
                 </li>
-                <li>
-                    <a href="{{ Route::current()->getName() != 'home' ? route('home') : '' }}#thesis-festival">Thesis Festival</a>
+                <li style="{{ __('global.dir') === 'rtl' ? 'float: right;' : '' }}">
+                    <a href="{{ Route::current()->getName() != 'home' ? route('home') : '' }}#thesis-festival">{{__('cruds.speaker.title')}}</a>
                 </li>
-                <li class="{{ Route::current()->getName() == 'poster' ? 'menu-active' : '' }}">
-                    <a href="{{ Route::current()->getName() != 'poster' ? route('poster') : '' }}">Poster</a>
+                <li style="{{ __('global.dir') === 'rtl' ? 'float: right;' : '' }}" class="{{ Route::current()->getName() == 'poster' ? 'menu-active' : '' }}">
+                    <a href="{{ Route::current()->getName() != 'poster' ? route('poster') : '' }}">{{__('cruds.poster.title')}}</a>
                 </li>
-                <li class="{{ Route::current()->getName() == 'committees' ? 'menu-active' : '' }}">
-                    <a href="{{ Route::current()->getName() != 'committees' ? route('committees') : '' }}">Committees</a>
+                <li style="{{ __('global.dir') === 'rtl' ? 'float: right;' : '' }}" class="{{ Route::current()->getName() == 'committees' ? 'menu-active' : '' }}">
+                    <a href="{{ Route::current()->getName() != 'committees' ? route('committees') : '' }}">{{__('cruds.committee.title')}}</a>
                 </li>
-                <li class="{{ Route::current()->getName() == 'news' ? 'menu-active' : '' }}">
-                    <a href="{{ Route::current()->getName() != 'news' ? route('news') : '' }}">News</a>
+                <li style="{{ __('global.dir') === 'rtl' ? 'float: right;' : '' }}" class="{{ Route::current()->getName() == 'news' ? 'menu-active' : '' }}">
+                    <a href="{{ Route::current()->getName() != 'news' ? route('news') : '' }}">{{__('cruds.news.title')}}</a>
                 </li>
-                <li class="{{ Route::current()->getName() == 'gallery' ? 'menu-active' : '' }}">
-                    <a href="{{ Route::current()->getName() != 'gallery' ? route('galleries') : '' }}">Gallery</a>
+                <li style="{{ __('global.dir') === 'rtl' ? 'float: right;' : '' }}" class="{{ Route::current()->getName() == 'galleries' ? 'menu-active' : '' }}">
+                    <a href="{{ Route::current()->getName() != 'gallery' ? route('galleries') : '' }}">{{__('cruds.gallery.title')}}</a>
                 </li>
-                <li class="{{ Route::current()->getName() == 'sponsors' ? 'menu-active' : '' }}">
-                    <a href="{{ Route::current()->getName() != 'sponsors' ? route('sponsors') : '' }}">Sponsors</a>
+                <li style="{{ __('global.dir') === 'rtl' ? 'float: right;' : '' }}" class="{{ Route::current()->getName() == 'sponsors' ? 'menu-active' : '' }}">
+                    <a href="{{ Route::current()->getName() != 'sponsors' ? route('sponsors') : '' }}">{{__('cruds.sponsor.title')}}</a>
                 </li>
-                <li class="{{ Route::current()->getName() == 'workshops' ? 'menu-active' : '' }}">
-                    <a href="{{ Route::current()->getName() != 'workshops' ? route('workshops') : '' }}">Program
-                        schedule</a>
+                <li style="{{ __('global.dir') === 'rtl' ? 'float: right;' : '' }}" class="{{ Route::current()->getName() == 'workshops' ? 'menu-active' : '' }}">
+                    <a href="{{ Route::current()->getName() != 'workshops' ? route('workshops') : '' }}">{{__('cruds.workshop.title')}}</a>
                 </li>
-                <li class="{{ Route::current()->getName() == 'author' ? 'menu-active' : '' }}">
-                    <a class="dropdown-toggle {{ Route::current()->getName() == 'author' ? '' : '' }}" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="{{ Route::current()->getName() != 'authors' ? route('authors') : '' }}">For
-                        Authors
+                <li style="{{ __('global.dir') === 'rtl' ? 'float: right;' : '' }}" class="{{ Route::current()->getName() == 'author' ? 'menu-active' : '' }}">
+                    <a class="dropdown-toggle {{ Route::current()->getName() == 'author' ? '' : '' }}" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="{{ Route::current()->getName() != 'authors' ? route('authors') : '' }}">
+                        {{__('cruds.author.title')}}
                     </a>
                     <div class="dropdown-menu bg-dark border border-rounded border-secondary border-top-0" aria-labelledby="dropdownMenuLink">
                         @foreach (App\Author::all() as $fa)
@@ -66,7 +64,7 @@
                         @endforeach
                     </div>
                 </li>
-                <li class="language-switch">
+                <li style="{{ __('global.dir') === 'rtl' ? 'float: right;' : '' }}" class="language-switch">
                     <a href="{{ route("locale.toggle") }}" hreflang="LOCALE PREFIX">
                         <i class="fa fa-globe" style="color: white;" aria-hidden="true"></i>
                         <span>
@@ -92,20 +90,3 @@
         }
     }
 </style>
-<?php
-// function getLocaleChangerURL($locale)
-// {
-//     $uri = $_SERVER['REQUEST_URI'];
-//     $uri = explode('/', $uri);
-//     if (count($uri) > 3) {
-//         return '/' . $locale;
-//     } //to prevent complex pages
-//     unset($uri[0]);
-//     unset($uri[1]);
-//     $url = url($locale);
-//     foreach ($uri as $u) {
-//         $url .= '/' . $u;
-//     }
-//     return $url;
-// }
-?>

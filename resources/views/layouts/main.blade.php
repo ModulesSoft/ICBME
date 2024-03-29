@@ -23,7 +23,7 @@
   <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
 
-<body>
+<body style="{{ __('global.dir') === 'rtl' ? 'text-align: right;' : '' }}">
   @include('partials.header')
 
   @yield('content')
