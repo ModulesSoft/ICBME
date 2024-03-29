@@ -21,6 +21,7 @@ class Kernel extends HttpKernel
             \App\Http\Middleware\AuthGates::class,
         ],
         'web' => [
+            \App\Http\Middleware\Archive::class,
             \App\Http\Middleware\EncryptCookies::class,
             \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
             \Illuminate\Session\Middleware\StartSession::class,
@@ -29,7 +30,6 @@ class Kernel extends HttpKernel
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
             \App\Http\Middleware\AuthGates::class,
             \App\Http\Middleware\SetLocale::class,
-            \App\Http\Middleware\Archive::class,
         ],
     ];
 
