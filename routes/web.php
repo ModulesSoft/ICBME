@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/locale/toggle', 'LocaleController@toggleLocale')->name('locale.toggle');
 Route::post('/year/change', 'YearController@changeYear')->name('year.change');
+Route::post('/subscription/subscribe', 'SubscriptionController@subscribe')->name('subscription.subscribe');
 Auth::routes(['register' => false]);
 Route::get('/', 'HomeController@index')->name('home');
 Route::resource('speakers', 'SpeakersController')->only('show')->name('show', 'speaker');
