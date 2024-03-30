@@ -11,7 +11,7 @@
                         @if(__('global.dir') === 'rtl')
                         {{\Morilog\Jalali\Jalalian::fromDateTime($new->created_at)->format('%B %d، %Y')}}
                         @else
-                        {{$dt->toFormattedDateString()}}
+                        {{$new->created_at->toFormattedDateString()}}
                         @endif
                     </time>
                 </p>
