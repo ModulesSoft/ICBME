@@ -1,6 +1,10 @@
 <?php
 
 return [
+    'subscription' => [
+        'success' => 'Your email has been successfully subscribed to our bulletin. Thank you!',
+        'fail' => 'There was an error with your subscription. Please try again later.'
+    ],
     'intro' => [
         'button' => 'About the Conference',
         'countdown' => [
