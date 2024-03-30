@@ -58,7 +58,7 @@
                     </a>
                     <div class="dropdown-menu bg-dark border border-rounded border-secondary border-top-0" aria-labelledby="dropdownMenuLink">
                         @foreach (App\Author::all() as $fa)
-                        <a class="bg-dark border-rounded border-0 py-2" style="display: block;" href="{{ route('author', $fa->id) }}">
+                        <a class="bg-dark border-rounded border-0 py-2" href="{{ route('author', $fa->id) }}" style="display: block; {{ __('global.dir') === 'rtl' ? 'text-align:right;' : '' }}">
                             {{ $fa->name }}
                         </a>
                         @endforeach
