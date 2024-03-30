@@ -3,7 +3,8 @@
 return [
     'subscription' => [
         'success' => 'Your email has been successfully subscribed to our bulletin. Thank you!',
-        'fail' => 'There was an error with your subscription. Please try again later.'
+        'fail' => 'There was an error with your subscription. Please try again later.',
+        'repetitive_fail' => 'Your email has been subscribed once before.'
     ],
     'intro' => [
         'button' => 'About the Conference',
