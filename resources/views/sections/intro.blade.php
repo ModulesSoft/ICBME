@@ -22,7 +22,7 @@
           hour = minute * 60,
           day = hour * 24;
 
-        let countDown = new Date("{{__('messages.intro.countdown.date')}}").getTime(),
+        let countDown = new Date("{{$settings['conference_date']}}").getTime(),
           x = setInterval(function() {
 
             let now = new Date().getTime(),
@@ -43,7 +43,7 @@
           }, second)
       </script>
     </div>
-    <img style="width: 80%;border-radius: 5px" src="{{ $settings['banner'] }}" alt="banner">
+    <img class="banner" src="{{ $settings['banner'] }}" alt="banner">
     <a href="#about" class="about-btn scrollto">{{__('messages.intro.button')}}</a>
   </div>
 </section>
