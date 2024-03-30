@@ -2,9 +2,8 @@
 
 return [
     'intro' => [
-        'button' => 'About The ICBME Conferences',
+        'button' => 'About the Conference',
         'countdown' => [
-            'date' => 'Nov 30, 2023 00:00:00',
             'days' => 'Days',
             'hours' => 'Hours',
             'minutes' => 'Minutes',
