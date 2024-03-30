@@ -41,6 +41,7 @@ class Venue extends Model implements HasMedia
     public function registerMediaConversions(Media $media = null): void
     {
         $this->addMediaConversion('thumb')->width(50)->height(50);
+        $this->addMediaConversion('bigthumb')->width(300)->height(300);
     }
 
     public function getPhotosAttribute()
@@ -48,7 +49,7 @@ class Venue extends Model implements HasMedia
         $files = $this->getMedia('photos');
         $files->each(function ($item) {
             $item->url       = $item->getUrl();
-            $item->thumbnail = $item->getUrl('thumb');
+            $item->bigthumbnail = $item->getUrl('bigthumb');
         });
 
         return $files;

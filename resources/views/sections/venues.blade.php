@@ -28,7 +28,7 @@
       <div class="col-lg-3 col-md-4">
         <div class="venue-gallery">
           <a href="{{ $photo->getUrl() }}" class="venobox" data-gall="venue-gallery">
-            <img src="{{ $photo->getUrl() }}" alt="" class="img-fluid">
+            <img src="{{ $photo->bigthumbnail }}" alt="" class="img-fluid">
           </a>
         </div>
       </div>
