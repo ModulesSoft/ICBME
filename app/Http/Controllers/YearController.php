@@ -25,7 +25,7 @@ class YearController extends Controller
 
         Session::put('appyear', $year);
 
-        Alert::success('Year',  Session::get('appyear'));
+        Alert::success(Session::get('appyear'));
 
         return Redirect::back();
     }
