@@ -33,7 +33,7 @@
                     </div>
                     <a class="pull-left" href="{{ route('new', $new->id) }}">
                         @if ($new->photo)
-                        <img src="{{ $new->photo->getUrl('medthumb') }}" alt="{{ $new->name }}" title="{{ $new->name }}" class="media-object" style="max-width:30vw;max-height:60vh;margin:0 10px;" />
+                        <img src="{{ $new->photo->getUrl('medthumb') }}" alt="{{ $new->name }}" title="{{ $new->name }}" class="media-object" style="width:100px;height:100px;margin:15px;" />
                         @endif
                     </a>
                     <div class="pull-right">
