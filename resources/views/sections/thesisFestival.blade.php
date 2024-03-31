@@ -1,3 +1,4 @@
+@if(isset($settings['thesisfestival_description']))
 <section id="thesis-festival" class="wow fadeInUp">
     <div class="container">
         <div class="section-header">
@@ -10,3 +11,4 @@
         </div>
     </div>
 </section>
+@endif
