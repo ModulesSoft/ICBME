@@ -2,23 +2,27 @@
     <div>
         <div id="logo">
             <h1>
+                @php
+                $currentYear = date('Y');
+                $firstYear = config('services.archive.first_year');
+                @endphp
                 <div class="btn-group">
                     <a type="button" class="btn btn-transparent shadow-none" href="{{ route('home') }}">
                         <img src="{{ $settings['logo'] }}" alt="logo">
-                        {{ env('APP_NAME', 'ICBME2023') }}
+                        {{ env('APP_NAME', 'ICBME').' '.$currentYear }}
                     </a>
                     <button type="button" class="btn btn-link dropdown-toggle dropdown-toggle-split" style="color:#f82249" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <span class="sr-only">Toggle Dropdown</span>
                     </button>
-                    <div class="dropdown-menu bg-secondary">
-                        <a class="dropdown-item border-secondary bg-secondary" href="/2020/en">2020</a>
-                        <a class="dropdown-item border-secondary bg-secondary" href="/2021/en">2021</a>
+                    <div class="dropdown-menu bg-dark">
                         <form method="POST" action="{{ route('year.change') }}">
                             @csrf
-                            <input type="hidden" name="year" value="2023">
-                            <button class="dropdown-item border-secondary bg-secondary" type="submit">2023</button>
+                            @for ($year = $currentYear-1; $year >= $firstYear; $year--)
+                            <button type="submit" class="dropdown-item border-secondary bg-dark text-light" name="year" value="{{ $year }}" style="cursor:pointer">{{ $year }}</button>
+                            @endfor
                         </form>
                     </div>
+
                 </div>
             </h1>
         </div>
@@ -56,7 +60,7 @@
                     <a class="dropdown-toggle {{ Route::current()->getName() == 'author' ? '' : '' }}" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="{{ Route::current()->getName() != 'authors' ? route('authors') : '' }}">
                         {{__('cruds.author.title')}}
                     </a>
-                    <div class="dropdown-menu bg-dark border border-rounded border-secondary border-top-0" aria-labelledby="dropdownMenuLink">
+                    <div class="dropdown-menu bg-dark border-dark" aria-labelledby="dropdownMenuLink">
                         @foreach (App\Author::all() as $fa)
                         <a class="bg-dark border-rounded border-0 py-2" href="{{ route('author', $fa->id) }}" style="display: block; {{ __('global.dir') === 'rtl' ? 'text-align:right;' : '' }}">
                             {{ $fa->name }}
