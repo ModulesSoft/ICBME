@@ -35,7 +35,7 @@
                     <a href="{{ Route::current()->getName() != 'home' ? route('home') : '' }}#thesis-festival">{{__('cruds.thesis.title_singular')}}</a>
                 </li>
                 <li style="{{ __('global.dir') === 'rtl' ? 'float: right;' : '' }}" class="{{ Route::current()->getName() == 'poster' ? 'menu-active' : '' }}">
-                    <a href="{{ Route::current()->getName() != 'poster' ? route('poster') : '' }}">{{__('cruds.poster.title')}}</a>
+                    <a href="{{ Route::current()->getName() != 'poster' ? route('poster') : '' }}">{{__('cruds.poster.title_singular')}}</a>
                 </li>
                 <li style="{{ __('global.dir') === 'rtl' ? 'float: right;' : '' }}" class="{{ Route::current()->getName() == 'committees' ? 'menu-active' : '' }}">
                     <a href="{{ Route::current()->getName() != 'committees' ? route('committees') : '' }}">{{__('cruds.committee.title')}}</a>
