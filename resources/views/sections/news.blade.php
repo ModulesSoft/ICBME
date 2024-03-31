@@ -33,11 +33,6 @@
                             </p>
                         </div>
                     </div>
-                    <a class="pull-left" href="{{ route('news', $new) }}">
-                        @if($new->photo)
-                        <img src="{{ $new->photo->getUrl('medthumb') }}" alt="{{ $new->name }}" title="{{ $new->name }}" class="media-object" style="max-width:30vw;max-height:60vh;margin:0 10px;" />
-                        @endif
-                    </a>
                     <div class="pull-right">
                         <a class="btn button btn-outline-info mb-4" href="{{ route('news', $new) }}">{{__('global.read_more')}}</a>
                     </div>
