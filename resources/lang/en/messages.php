@@ -113,7 +113,7 @@ return [
         'subtitle' => 'Here are our program schedule',
     ],
     'poster' => [
-        'title' => 'ICBME 2023 POSTER',
+        'title' => 'ICBME POSTER',
         'subtitle' => 'Here is our official poster',
     ],
     'thesisfestival' => [

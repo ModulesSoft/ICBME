@@ -117,7 +117,7 @@ return [
     ],
     'poster' => [
         'title' => 'پوستر',
-        'subtitle' => 'پوستر رسمی ICBME 2023',
+        'subtitle' => 'پوستر رسمی ICBME',
     ],
     'thesisfestival' => [
         'title' => "جشنواره پایان نامه ها",
