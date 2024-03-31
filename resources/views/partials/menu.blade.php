@@ -22,6 +22,9 @@
                             English
                             @endif
                         </span>
+                        <span>
+                            {{session('appyear')}}
+                        </span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -252,9 +255,6 @@
                             <span>{{ trans('global.logout') }}</span>
                         </p>
                     </a>
-                </li>
-                <li class="nav-item text-secondary">
-                    Next archiving date: <br>{{session('archiveDatetime')}}
                 </li>
             </ul>
         </nav>
