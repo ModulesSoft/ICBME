@@ -6,7 +6,6 @@ use Carbon\Carbon;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -26,27 +25,18 @@ class Archive
         $archiveDateTime->day(Config::get('services.archive.day'));
         $archiveDateTime->month(Config::get('services.archive.month'));
         $archiveDateTime->startOfDay();
-
-        $dbconnection = Config::get('database.default');
-        $rawDBName = Config::get("database.connections.$dbconnection.database");
-
         // Check if the the archive date is past
         if ($currentDateTime > $archiveDateTime) {
             $nextArchiveDateTime = $archiveDateTime->copy();
             $nextArchiveDateTime->addYear();
             // Set a session for archive date (is used in front-end)
             Session::put('archiveDatetime', $nextArchiveDateTime->toDateTimeString());
-            // Set new database name
-            Config::set("database.connections.$dbconnection.database", $rawDBName . $archiveDateTime->year);
         } else {
             $lastArchiveDateTime = $archiveDateTime->copy();
             $lastArchiveDateTime->subYear();
             // Set a session for archive date (is used in front-end)
             Session::put('archiveDatetime', $archiveDateTime->toDateTimeString());
-            // Set new database name
-            Config::set("database.connections.$dbconnection.database", $rawDBName . $lastArchiveDateTime->year);
         }
-        DB::purge('mysql');
 
         return $next($request);
     }
