@@ -2,14 +2,10 @@
     <div>
         <div id="logo">
             <h1>
-                @php
-                $currentYear = date('Y');
-                $firstYear = config('services.archive.first_year');
-                @endphp
                 <div class="btn-group">
                     <a type="button" class="btn btn-transparent shadow-none" href="{{ route('home') }}">
                         <img src="{{ $settings['logo'] }}" alt="logo">
-                        {{ env('APP_NAME', 'ICBME').' '.session('appyear') }}
+                        {{ env('APP_NAME', 'ICBME').' '.(session('appyear')?:config('services.conference.last_year')) }}
                     </a>
                     <button type="button" class="btn btn-link dropdown-toggle dropdown-toggle-split" style="color:#f82249" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <span class="sr-only">Toggle Dropdown</span>
@@ -17,7 +13,7 @@
                     <div class="dropdown-menu bg-dark">
                         <form method="POST" action="{{ route('year.change') }}">
                             @csrf
-                            @for ($year = $currentYear-1; $year >= $firstYear; $year--)
+                            @for ($year = config('services.conference.last_year'); $year >= config('services.conference.first_year'); $year--)
                             <button type="submit" class="dropdown-item border-secondary bg-dark text-light" name="year" value="{{ $year }}" style="cursor:pointer">{{ $year }}</button>
                             @endfor
                         </form>

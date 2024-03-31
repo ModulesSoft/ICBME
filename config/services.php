@@ -30,10 +30,9 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
-    'archive' => [
-        'day' =>  env('archiving_day', 01),
-        'month' =>  env('archiving_month', 01),
-        'first_year' => env('archiving_first_year', 2020)
+    'conference' => [
+        'first_year' => env('conference_first_year', 2020),
+        'last_year' => env('conference_last_year', date('Y'))
     ]
 
 ];
