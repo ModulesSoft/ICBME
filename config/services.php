@@ -33,6 +33,7 @@ return [
     'archive' => [
         'day' =>  env('archiving_day', 01),
         'month' =>  env('archiving_month', 01),
+        'first_year' => env('archiving_first_year', 2020)
     ]
 
 ];
