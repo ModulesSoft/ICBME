@@ -15,6 +15,8 @@ class CreateHotelsTable extends Migration
 
             $table->text('address')->nullable();
 
+            $table->text('link')->nullable();
+
             $table->longText('description')->nullable();
 
             $table->integer('rating')->nullable();
