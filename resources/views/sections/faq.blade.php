@@ -14,7 +14,7 @@
                     <li>
                         <a data-toggle="collapse" class="collapsed" href="#faq{{ $faq->id }}">
                             <i class="fa fa-minus-circle"></i>
-                            <span>{{ $faq->question }}</span>
+                            <span class="mx-2">{{ $faq->question }}</span>
                         </a>
                         <div id="faq{{ $faq->id }}" class="collapse" data-parent="#faq-list">
                             <p>
