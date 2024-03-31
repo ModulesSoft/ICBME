@@ -18,17 +18,17 @@ class SetYear
      */
     public function handle(Request $request, Closure $next): Response
     {
-        // get current db name
-        $dbconnection = Config::get('database.default');
-        $DBName = Config::get("database.connections.$dbconnection.database");
-        // create new db name based on the session data
-        $DBNameWithoutYear = substr($DBName, 0, -4);
-        $newDBName = $DBNameWithoutYear . Session::get('appyear');
-        // reconfig the DB if the requested DB (year) is not the default DB (year)
-        if (Session::get('appyear') !== null && $DBName !== $newDBName) {
-            Config::set("database.connections.$dbconnection.database", $newDBName);
-            DB::purge('mysql');
+        // if appyear is not set, set it to the conference last year
+        if (Session::get('appyear') === null) {
+            Session::put('appyear', Config::get('services.conference.last_year'));
         }
+        // get current db name
+        $dBConnection = Config::get('database.default');
+        $dBNameWithoutYear = Config::get("database.connections.$dBConnection.database");
+        // create new db name based on the session data
+        $dBName = $dBNameWithoutYear . Session::get('appyear');
+        // reconfig the DB if the requested DB (year) is not the default DB (year)
+        Config::set("database.connections.$dBConnection.database", $dBName);
 
         return $next($request);
     }
