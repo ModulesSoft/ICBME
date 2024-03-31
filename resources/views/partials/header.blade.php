@@ -9,7 +9,7 @@
                 <div class="btn-group">
                     <a type="button" class="btn btn-transparent shadow-none" href="{{ route('home') }}">
                         <img src="{{ $settings['logo'] }}" alt="logo">
-                        {{ env('APP_NAME', 'ICBME').' '.$currentYear }}
+                        {{ env('APP_NAME', 'ICBME').' '.session('appyear') }}
                     </a>
                     <button type="button" class="btn btn-link dropdown-toggle dropdown-toggle-split" style="color:#f82249" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <span class="sr-only">Toggle Dropdown</span>
