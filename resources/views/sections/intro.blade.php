@@ -1,4 +1,10 @@
 <section id="intro">
+  <div class="video-container">
+    <video autoplay muted loop poster="img/intro-bg.jpg">
+      <source src="img/pixels.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
   <div class="intro-container wow fadeIn">
     <h1 class="mb-4 pb-0">{!! $settings['title'] ?? '' !!}</h1>
     <p class="mb-4 pb-0">{{ $settings['subtitle'] ?? '' }}</p>
