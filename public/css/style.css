@@ -524,6 +524,7 @@ body.mobile-nav-active #mobile-nav-toggle {
     min-height: 100vh;
     bottom: 0;
     opacity: 0.3;
+    pointer-events: none;
 }
 
 #intro {
