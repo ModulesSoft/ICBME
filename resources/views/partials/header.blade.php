@@ -7,7 +7,7 @@
                         <img src="{{ $settings['logo'] }}" alt="logo">
                         {{ env('APP_NAME', 'ICBME').' '.(session('appyear')?:config('services.conference.last_year')) }}
                     </a>
-                    <button type="button" class="btn btn-link dropdown-toggle dropdown-toggle-split" style="color:#f82249" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button type="button" class="btn btn-link dropdown-toggle dropdown-toggle-split" style="color:#f82249;padding-left:0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <span class="sr-only">Toggle Dropdown</span>
                     </button>
                     <div class="dropdown-menu bg-dark">
