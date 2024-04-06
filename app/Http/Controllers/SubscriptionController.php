@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\subscription;
+use App\Subscription;
 use Illuminate\Database\UniqueConstraintViolationException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
