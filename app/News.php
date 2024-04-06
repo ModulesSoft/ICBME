@@ -37,8 +37,8 @@ class News extends Model implements HasMedia
 
     public function registerMediaConversions(Media $media = null): void
     {
-        $this->addMediaConversion('thumb')->width(50)->height(50);
-        $this->addMediaConversion('medthumb')->width(150)->height(150);
+        $this->addMediaConversion('thumb')->width(50)->height(50)->nonOptimized();
+        $this->addMediaConversion('medthumb')->width(150)->height(150)->nonOptimized();
     }
 
     public function getPhotoAttribute()
