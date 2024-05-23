@@ -30,6 +30,8 @@
 
   @include('partials.footer')
 
+  @include('sweetalert::alert')
+
   <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
 
   <!-- JavaScript Libraries -->

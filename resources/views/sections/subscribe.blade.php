@@ -22,7 +22,6 @@
       </div>
     </form>
   </div>
-  @include('sweetalert::alert')
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const form = document.querySelector('#subscribe form');
