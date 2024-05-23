@@ -1,6 +1,6 @@
 <section id="intro">
   <div class="video-container">
-    <video autoplay muted loop poster="">
+    <video playsinline autoplay muted loop poster="">
       <source src="img/pixels.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
