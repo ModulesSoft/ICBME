@@ -109,8 +109,8 @@ return [
         'title' => 'Know more about'
     ],
     'workshops' => [
-        'title' => 'Program schedule',
-        'subtitle' => 'Here are our program schedule',
+        'title' => 'Workshops',
+        'subtitle' => 'Here are our workshops details',
     ],
     'poster' => [
         'title' => 'ICBME POSTER',
