@@ -9,21 +9,21 @@
                     <p>Total visits: {{ $totalHits }}</p>
                     <p>Today visits: {{ $todayHits }}</p>
                     @endif
-                  <div class="mt-4">
-                    <script language="javascript" src="https://conf.isc.ac/trustseal/checkIsc.php?code=۰۱۲۲۰-۴۲۹۹۶"></script>
-                  </div>
+                    <div class="mt-4">
+                        <script language="javascript" src="https://conf.isc.ac/trustseal/checkIsc.php?code=۰۱۲۲۰-۴۲۹۹۶"></script>
+                    </div>
                 </div>
 
                 <div class="col-lg-3 col-md-6 footer-links">
                     <h4>{{ __('messages.footer.links.title') }}</h4>
                     <ul>
-                        <li><i class="fa fa-angle-right"></i> <a href="{{ $settings['footer_ieee'] }}">{{ __('messages.footer.links.link1') }}</a>
+                        <li><i class="fa fa-angle-right"></i> <a href="{{ $settings['footer_ieee']??'#' }}">{{ __('messages.footer.links.link1') }}</a>
                         </li>
-                        <li><i class="fa fa-angle-right"></i> <a href="{{ $settings['footer_ieeeir'] }}">{{ __('messages.footer.links.link2') }}</a>
+                        <li><i class="fa fa-angle-right"></i> <a href="{{ $settings['footer_ieeeir']??'#' }}">{{ __('messages.footer.links.link2') }}</a>
                         </li>
-                        <li><i class="fa fa-angle-right"></i> <a href="{{ $settings['footer_aut'] }}">{{ __('messages.footer.links.link3') }}</a>
+                        <li><i class="fa fa-angle-right"></i> <a href="{{ $settings['footer_aut']??'#' }}">{{ __('messages.footer.links.link3') }}</a>
                         </li>
-                        <li><i class="fa fa-angle-right"></i> <a href="{{ $settings['footer_isc'] }}">{{ __('messages.footer.links.link4') }}</a>
+                        <li><i class="fa fa-angle-right"></i> <a href="{{ $settings['footer_isc']??'#' }}">{{ __('messages.footer.links.link4') }}</a>
                         </li>
                         @guest
                         <li><i class="fa fa-angle-right"></i> <a href="{{ route('login') }}">{{ __('messages.footer.links.link5') }}</a></li>
@@ -37,15 +37,15 @@
                 <div class="col-lg-3 col-md-6 footer-links">
                     <h4>{{ __('messages.footer.links2.title') }}</h4>
                     <ul>
-                        <li><i class="fa fa-angle-right"></i> <a href="{{ $settings['footer_isbme'] }}">{{ __('messages.footer.links2.link1') }}</a>
+                        <li><i class="fa fa-angle-right"></i> <a href="{{ $settings['footer_isbme']??'#' }}">{{ __('messages.footer.links2.link1') }}</a>
                         </li>
-                        <li><i class="fa fa-angle-right"></i> <a href="{{ $settings['footer_edas'] }}">{{ __('messages.footer.links2.link2') }}</a>
+                        <li><i class="fa fa-angle-right"></i> <a href="{{ $settings['footer_edas']??'#' }}">{{ __('messages.footer.links2.link2') }}</a>
                         </li>
-                        <li><i class="fa fa-angle-right"></i> <a href="{{ $settings['footer_msrt'] }}">{{ __('messages.footer.links2.link3') }}</a>
+                        <li><i class="fa fa-angle-right"></i> <a href="{{ $settings['footer_msrt']??'#' }}">{{ __('messages.footer.links2.link3') }}</a>
                         </li>
-                        <li><i class="fa fa-angle-right"></i> <a href="{{ $settings['footer_mohme'] }}">{{ __('messages.footer.links2.link4') }}</a>
+                        <li><i class="fa fa-angle-right"></i> <a href="{{ $settings['footer_mohme']??'#' }}">{{ __('messages.footer.links2.link4') }}</a>
                         </li>
-                        <li><i class="fa fa-angle-right"></i> <a href="{{ $settings['footer_ut'] }}">{{ __('messages.footer.links2.link5') }}</a>
+                        <li><i class="fa fa-angle-right"></i> <a href="{{ $settings['footer_ut']??'#' }}">{{ __('messages.footer.links2.link5') }}</a>
                         </li>
                     </ul>
                 </div>
