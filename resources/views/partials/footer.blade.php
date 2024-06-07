@@ -45,8 +45,8 @@
                         </li>
                         <li><i class="fa fa-angle-right"></i> <a href="{{ $settings['footer_mohme']??'#' }}">{{ __('messages.footer.links2.link4') }}</a>
                         </li>
-                        <li><i class="fa fa-angle-right"></i> <a href="{{ $settings['footer_ut']??'#' }}">{{ __('messages.footer.links2.link5') }}</a>
-                        </li>
+                        <!-- <li><i class="fa fa-angle-right"></i> <a href="{{ $settings['footer_ut']??'#' }}">{{ __('messages.footer.links2.link5') }}</a>
+                        </li> -->
                     </ul>
                 </div>
 
