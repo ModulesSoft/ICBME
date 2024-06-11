@@ -45,8 +45,6 @@
                         </li>
                         <li><i class="fa fa-angle-right"></i> <a href="{{ $settings['footer_mohme']??'#' }}">{{ __('messages.footer.links2.link4') }}</a>
                         </li>
-                        <!-- <li><i class="fa fa-angle-right"></i> <a href="{{ $settings['footer_ut']??'#' }}">{{ __('messages.footer.links2.link5') }}</a>
-                        </li> -->
                     </ul>
                 </div>
 
@@ -62,10 +60,6 @@
                         <a href="{{ $settings['footer_telegram'] ?? '' }}" class="telegram"><i class="fa fa-telegram"></i></a>
                         <a href="{{ $settings['footer_edas'] ?? '' }}" class="telegram"><img style="height: 20px;border-radius: 50%" src="{{ asset('img/edas.png') }}" alt=''></a>
                         <a href="{{ $settings['footer_payment'] ?? '' }}" class="telegram"><img style="height: 20px;border-radius: 50%" src="{{ asset('img/payment.png') }}" alt=''></a>
-                        {{-- <a href="{{ $settings['footer_facebook'] ?? '' }}" class="facebook"><i class="fa fa-facebook"></i></a> --}}
-                        {{-- <a href="{{ $settings['footer_instagram'] ?? '' }}" class="instagram"><i class="fa fa-instagram"></i></a> --}}
-                        {{-- <a href="{{ $settings['footer_googleplus'] ?? '' }}" class="google-plus"><i class="fa fa-google-plus"></i></a> --}}
-                        {{-- <a href="{{ $settings['footer_linkedin'] ?? '' }}" class="linkedin"><i class="fa fa-linkedin"></i></a> --}}
                     </div>
 
                 </div>
