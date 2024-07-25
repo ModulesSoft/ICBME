@@ -10,7 +10,7 @@
                     <p>Today visits: {{ $todayHits }}</p>
                     @endif
                     <div class="mt-4">
-                        <script language="javascript" src="https://conf.isc.ac/trustseal/checkIsc.php?code=۰۱۲۲۰-۴۲۹۹۶"></script>
+                        <!-- <script language="javascript" src="https://conf.isc.ac/trustseal/checkIsc.php?code=۰۱۲۲۰-۴۲۹۹۶"></script> -->
                     </div>
                 </div>
 
